@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "liberation";
+
+  src: url("../fonts/LiberationSerif-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "noir";
+
+  src: url("../fonts/FilmNoir.otf") format("otf");
+}
+
+.homescreen {
+  background-image: url(../images/hsbackground.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+
+.game-menu {
+}
+
+#h2 {
+  font-family: liberation;
+  color: white;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+#h2:hover {
+  color: red;
+
+  text-decoration: underline;
+}
+
+.homescreen-start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  z-index: 99;
+  background-color: black;
+}
+
+.homescreen-start-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.homescreen-start-button h1:hover {
+  color: red;
+}
