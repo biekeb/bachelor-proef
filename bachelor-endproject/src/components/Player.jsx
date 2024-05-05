@@ -1,8 +1,9 @@
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
-import { useSphere, useBox } from "@react-three/cannon"; // Import useBox for the player's rigidbody
+import { useSphere, useBox } from "@react-three/cannon";
 import { useThree, useFrame } from "@react-three/fiber";
 import Body from "./Body";
+import audio from "../styling/sounds/menu.mp3";
 
 // Define constants and key mappings for player movement
 const SPEED = 10;
@@ -62,12 +63,23 @@ export const Player = (props) => {
   }));
 
   const { forward, backward, left, right, jump } = usePlayerControls(); // Use custom hook to get player controls state
-  const { camera } = useThree(); // Get camera from three.js scene
+  const { camera, scene } = useThree(); // Get camera and scene from three.js
 
   const velocity = useRef([0, 0, 0]); // Create a ref for storing the player's velocity
 
+  // Audio setup
+  const listener = new THREE.AudioListener();
+  camera.add(listener);
 
-  
+  // Add audio to the scene
+  const sound = new THREE.Audio(listener);
+  const audioLoader = new THREE.AudioLoader();
+  audioLoader.load({ audio }, function (buffer) {
+    sound.setBuffer(buffer);
+    sound.setLoop(true);
+    sound.setVolume(5);
+    sound.play();
+  });
 
   // Subscribe to the velocity changes in the cannon physics body
   useEffect(() => api.velocity.subscribe((v) => (velocity.current = v)), []);
