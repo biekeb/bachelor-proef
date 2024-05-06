@@ -3,11 +3,15 @@ const ClueManager = {
   clues: {
     clue1: {
       found: false,
-      description: "The bullets found in the body were .45 ACP.",
+      description: "The bullets found on the ground are .45 callbiers ACP.",
     },
     clue2: {
       found: false,
-      description: "Description for clue 2.",
+      description: "The lifeless body of Don Salvatore",
+    },
+    clue3: {
+      found: false,
+      description: "",
     },
     // Add more clues as needed
   },

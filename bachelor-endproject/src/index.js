@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import "./global.css";
 
 import "./styling/css/Home.css";
+import "./styling/css/global.css";
+import "./styling/css/styles.css";
 
 import App from "./App.js";
-
 import ErrorPage from "./error/Error";
 import HomescreenTest from "./pages/HomescreenTest.jsx";
 import Scenetest from "./pages/ObjectTest.jsx";
@@ -19,7 +19,7 @@ import BookComponent from "./pages/Book.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomescreenTest />,
+    element: <Homescreen />,
     errorElement: <ErrorPage />,
   },
 

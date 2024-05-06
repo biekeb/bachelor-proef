@@ -2,9 +2,9 @@ import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
 import * as THREE from "three";
 
-export default function Isabella() {
-  const isabella = useGLTF("./assets/deadon.glb");
-  const animations = useAnimations(isabella.animations, isabella.scene);
+export default function Deadon() {
+  const deadon = useGLTF("./assets/deadon.glb");
+  const animations = useAnimations(deadon.animations, deadon.scene);
 
   useEffect(() => {
     const action = animations.actions["CharacterArmature|Death"];
@@ -12,5 +12,5 @@ export default function Isabella() {
     action.clampWhenFinished = true; // Stop the animation from advancing after it completes
   }, []);
 
-  return <primitive object={isabella.scene} />;
+  return <primitive object={deadon.scene} />;
 }
