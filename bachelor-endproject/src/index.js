@@ -6,20 +6,20 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./styling/css/Home.css";
 import "./styling/css/global.css";
 import "./styling/css/styles.css";
+import "./styling/css/test.css";
+
 
 import App from "./App.js";
 import ErrorPage from "./error/Error";
-import HomescreenTest from "./pages/HomescreenTest.jsx";
-import Scenetest from "./pages/ObjectTest.jsx";
+import Homescreen from "./pages/Homescreen.jsx";
 import POIScreen from "./pages/POIScreen.jsx";
-import SuspectInterview from "./pages/Interview.jsx";
-import AnotherComponent from "./pages/ClueSystem.jsx";
+import AnotherComponent from "./components/clues/ClueSystem.jsx";
 import BookComponent from "./pages/Book.jsx";
-
+import Test2 from "./components/Test2.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Homescreen />,
+    element: <Test2/>,
     errorElement: <ErrorPage />,
   },
 
