@@ -6,7 +6,7 @@ export default function Model(props) {
     "./assets/deadon/deadon-transformed.glb"
   );
   return (
-    <group {...props} dispose={null}>
+    <group scale={[10,10,10,]} {...props} dispose={null}>
       <primitive object={nodes.Root} />
       <mesh
         geometry={nodes.Node.geometry}

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSphere, useBox } from "@react-three/cannon";
 import { useThree, useFrame } from "@react-three/fiber";
 import Body from "./Body";
-import audio from "../styling/sounds/menu.mp3";
+import audio from "../../styling/sounds/menu.mp3";
 
 // Define constants and key mappings for player movement
 const SPEED = 10;
@@ -13,6 +13,7 @@ const keys = {
   KeyA: "left",
   KeyD: "right",
   Space: "jump",
+  
 };
 
 // Helper function to map key codes to movement fields

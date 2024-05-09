@@ -17,7 +17,8 @@ import {
   ColorAverage,
 } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
-import logo from '../components/Logo'
+
+//TODO: if there is a name found in local storage show continue if not show new game
 
 const HomescreenTest = () => {
   const [position, setPosition] = useState([-8.6, -5, 55]);
@@ -80,6 +81,10 @@ const HomescreenTest = () => {
 
         {cameraRigEnabled && <CameraRig position={position} />}
         <ambientLight color={"red"} intensity={0.5} />
+        {/* <mesh visible={isVisible} position={[index * 2, 0, 0]}>
+          <boxGeometry args={[1, 1, 1]} />
+          <meshStandardMaterial color={colors[index]} />
+       </mesh> */}
         <Office />
         <PositionalAudio url={music} distance={1} loop />
 
@@ -90,14 +95,14 @@ const HomescreenTest = () => {
         style={{ zIndex: "99", position: "relative" }}
       >
         <>
-        <Logo/>
           <button>
-            <a href="app">play</a>
+            <a id='play-btn' href="app">play</a>
           </button>
           {/* <button onClick={() => handleButtonClick([-5, 0, 0])}>
             Settings
           </button> */}
-          <button onClick={() => handleButtonClick([5, 5, 5])}>
+        
+          <button onClick={() => handleButtonClick([-2, 0, 0])}>
             How to play
           </button>
         </>

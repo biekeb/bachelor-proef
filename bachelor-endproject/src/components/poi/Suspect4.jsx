@@ -6,6 +6,8 @@ export default function Isabella() {
   const animations = useAnimations(isabella.animations, isabella.scene);
 
   useEffect(() => {
+
+    //idle animation
     const action = animations.actions["CharacterArmature|Death"];
     action.play()
   }, []);

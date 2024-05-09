@@ -3,14 +3,13 @@ import { Canvas } from "@react-three/fiber";
 import { Sky, PointerLockControls, Html } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 import { Ground } from "./components/Ground";
-import { Player } from "./components/Player";
-import Bottle from "./components/model/Bottle";
+import { Player } from "./components/character/Player";
 import InteractiveCube from "./components/InteractiveCube";
 import { useNavigate } from "react-router-dom";
 import Office from "./components/model/Office";
 import { Perf } from "r3f-perf";
 import { Loader } from "./components/Loader";
-import Crosshair from "./components/Crosshair";
+import Crosshair from "./components/character/Crosshair";
 
 export default function App() {
   const [loader, setLoader] = useState(true);
@@ -57,7 +56,6 @@ export default function App() {
           <Physics gravity={[0, -30, 0]}>
             <Ground />
             <Player />
-            <Bottle onClick={handleClick} />
             {showScreen && (
               <Html>
                 <div

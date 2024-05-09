@@ -1,5 +1,7 @@
 import React from "react";
 import { useBox } from "@react-three/cannon";
+import { RigidBody } from "@react-three/rapier";
+
 
 const InteractiveCube = (props) => {
   const [ref] = useBox(() => ({
@@ -17,3 +19,5 @@ const InteractiveCube = (props) => {
 };
 
 export default InteractiveCube;
+
+

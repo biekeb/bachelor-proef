@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ClueManager from "./clueManager"; // Assuming clueManager.js is in the same directory
+import ClueManager from "../components/clues/clueManager"; // Assuming clueManager.js is in the same directory
 import bookimage from "../styling/images/book.jpg";
 const BookComponent = () => {
   // State to store the fetched clues

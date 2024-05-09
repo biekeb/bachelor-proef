@@ -58,3 +58,26 @@
 .homescreen-start-button h1:hover {
   color: red;
 }
+
+
+.homescreen-button {
+  position: absolute;
+  top: 300px;
+  left: 100px;
+}
+
+.homescreen-button button{
+  display: flex;
+  z-index: 10;
+  flex-direction: column;
+  color: rgb(255, 0, 0);
+  background-color: rgba(255, 0, 0, 0);
+  border-color: rgba(240, 248, 255, 0);
+  font-size: 2em;
+  font-family: 'noir';
+  font-weight: 900;
+}
+#play-btn{
+  text-decoration: none;
+  color: red;
+}

@@ -2,19 +2,19 @@
 @font-face {
   font-family: "noir";
 
-  src: url("./styling/fonts/FilmNoir.otf") format("otf");
+  src: url("../fonts/FilmNoir.otf") format("otf");
 }
 
 @font-face {
   font-family: "cookie";
 
-  src: url("./styling/fonts/Cookie-Regular.ttf") format("ttf");
+  src: url("../fonts/Cookie-Regular.ttf") format("ttf");
 }
 
 @font-face {
   font-family: "liberation";
 
-  src: url("./styling/fonts/LiberationSerif-Regular.ttf") format("ttf");
+  src: url("../fonts/LiberationSerif-Regular.ttf") format("ttf");
 }
 
 body {

@@ -1,23 +1,24 @@
 import React, { useRef, useState } from "react";
-import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import Isabella from "./Isabella";
-import Deadon from "../components/model/Deadon.jsx";
+import Isabella from "./Deadon";
 import { Html, OrbitControls } from "@react-three/drei";
 import {
   Bloom,
-  DepthOfField,
   EffectComposer,
   Noise,
   Sepia,
   ColorAverage,
 } from "@react-three/postprocessing";
+import ClueManager from "../components/clues/clueManager"; // Assuming clueManager.js is in the same directory
+import Deadon from "./Deadon";
+
 
 const POIScreen = () => {
-  const [showDiv, setShowDiv] = useState(false); // State to manage div visibility
+
   const handleButtonClick = () => {
-    setShowDiv(!showDiv); // Toggle div visibility
+    if (!ClueManager.clues.clue1.found) {
+      ClueManager.updateClueStatus("clue1");
+    }
   };
 
   return (
@@ -31,7 +32,7 @@ const POIScreen = () => {
       <OrbitControls />
       
 
-      <Isabella />
+      <Deadon />
 
       <Html transform position={[-0.5, 0, -1]} center distanceFactor={1}>
         <div className="overlay">
@@ -43,23 +44,12 @@ const POIScreen = () => {
           >
             1
           </button>
-          {showDiv && <div>This is the div to show!</div>}
-        </div>
+          {ClueManager.clues.clue1.found && (
+        <p>{ClueManager.clues.clue1.description}</p>
+      )}        </div>
       </Html>
 
-      <Html transform position={[-0.5, 0, -1]} center distanceFactor={1}>
-        <div className="overlay">
-          <button
-            style={{
-              backgroundColor: "yellow",
-            }}
-            onClick={handleButtonClick}
-          >
-            1
-          </button>
-          {showDiv && <div>This is the div to show!</div>}
-        </div>
-      </Html>
+ 
     </Canvas>
   );
 };
