@@ -2,24 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-
 import "./styling/css/Home.css";
 import "./styling/css/global.css";
 import "./styling/css/styles.css";
 import "./styling/css/test.css";
 
-
 import App from "./App.js";
 import ErrorPage from "./error/Error";
 import Homescreen from "./pages/Homescreen.jsx";
-import POIScreen from "./pages/POIScreen.jsx";
+import SuspectScreen from "./pages/SuspectScreen.jsx";
 import AnotherComponent from "./components/clues/ClueSystem.jsx";
 import BookComponent from "./pages/Book.jsx";
 import Test2 from "./components/Test2.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Test2/>,
+    element: <Test2 />,
     errorElement: <ErrorPage />,
   },
 
@@ -36,7 +34,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/poi",
-    element: <POIScreen />,
+    element: <SuspectScreen />,
     errorElement: <ErrorPage />,
   },
   {
