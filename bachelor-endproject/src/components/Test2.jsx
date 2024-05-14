@@ -66,7 +66,6 @@ function Model(props) {
 
       <Annotation position={[-0.5, 0.1, -1]}>1</Annotation>
       <Annotation position={[0.2, 0.1, -1.5]}>2</Annotation>
-      <Annotation position={[1.5, 0, -3]}>1</Annotation>
     </group>
   );
 }

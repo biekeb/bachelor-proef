@@ -96,12 +96,14 @@ const HomescreenTest = () => {
       >
         <>
           <button>
-            <a id='play-btn' href="app">play</a>
+            <a id="play-btn" href="app">
+              play
+            </a>
           </button>
           {/* <button onClick={() => handleButtonClick([-5, 0, 0])}>
             Settings
           </button> */}
-        
+
           <button onClick={() => handleButtonClick([-2, 0, 0])}>
             How to play
           </button>

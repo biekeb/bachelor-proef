@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "./data";
+import data from "./AnthonyData";
 
 function AnthonyInterview() {
   const [currentNode, setCurrentNode] = useState(data);

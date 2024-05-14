@@ -260,3 +260,33 @@ body {
   width: 1px; /* Adjust thickness of the line */
   height: 100%;
 }
+
+.examine {
+  background-image: url(../images/back.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.eeContainer {
+  display: flex;
+  padding-left: 5%;
+}
+
+.eeItem {
+  flex: 0.5;
+}
+
+.evidence {
+  padding-left: 5%;
+}
+.evidenceItem {
+  display: flex;
+}
+
+.evidenceItem img {
+  width: 100px;
+  border: 1pt solid #ff0000;
+}

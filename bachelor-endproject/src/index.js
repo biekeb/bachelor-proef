@@ -12,12 +12,15 @@ import ErrorPage from "./error/Error";
 import Homescreen from "./pages/Homescreen.jsx";
 import SuspectScreen from "./pages/SuspectScreen.jsx";
 import AnotherComponent from "./components/clues/ClueSystem.jsx";
-import BookComponent from "./pages/Book.jsx";
+import BookComponent from "./components/del/Book.jsx";
 import Test2 from "./components/Test2.jsx";
+import Examine from "./pages/Examine.jsx";
+import OperationDon from "./pages/OperationDon.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Test2 />,
+    element: <Homescreen />,
     errorElement: <ErrorPage />,
   },
 
@@ -29,17 +32,27 @@ const router = createBrowserRouter([
 
   {
     path: "/screen",
-    element: <AnotherComponent />,
+    element: <Test2 />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/poi",
+    path: "/suspects",
     element: <SuspectScreen />,
     errorElement: <ErrorPage />,
   },
   {
     path: "/book",
     element: <BookComponent />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/examine",
+    element: <Examine />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/operation",
+    element: <OperationDon />,
     errorElement: <ErrorPage />,
   },
 ]);
