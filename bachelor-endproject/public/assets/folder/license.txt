@@ -1,0 +1,11 @@
+Model Information:
+* title:	Folder
+* source:	https://sketchfab.com/3d-models/folder-d7ee82642f6f47acbcd49f04708d7c57
+* author:	dash99 (https://sketchfab.com/dash99)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Folder" (https://sketchfab.com/3d-models/folder-d7ee82642f6f47acbcd49f04708d7c57) by dash99 (https://sketchfab.com/dash99) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
