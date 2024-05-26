@@ -2,17 +2,28 @@ const ClueManager = {
   // Define initial clues
   clues: {
     clue1: {
-      found: false,
+      found: true,
       description: "The bullets found on the ground are .45 callbiers ACP.",
     },
     clue2: {
-      found: false,
+      found: true,
       description: "The lifeless body of Don Salvatore",
     },
     clue3: {
       found: false,
       description: "",
     },
+    clue4: {
+      found: false,
+      description: "",
+    },
+    clue5: {
+      found: false,
+      description: "",
+    },
+    
+    
+
     // Add more clues as needed
   },
   // Function to update a clue's status
