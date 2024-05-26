@@ -23,8 +23,6 @@ body {
   position: fixed;
   overflow: hidden;
   overscroll-behavior-y: none;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-    helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
   color: black;
 }
 
@@ -233,6 +231,7 @@ body {
 }
 
 .crosshair {
+  z-index: 99;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -262,7 +261,6 @@ body {
 }
 
 .examine {
-  background-image: url(../images/back.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -289,4 +287,47 @@ body {
 .evidenceItem img {
   width: 100px;
   border: 1pt solid #ff0000;
+}
+
+
+.info-div {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.info-div p {
+  margin: 0 0 10px;
+}
+
+.info-div button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.info-div button:hover {
+  background-color: #0056b3;
+}
+
+.annotation {
+  cursor: pointer;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.annotation:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }

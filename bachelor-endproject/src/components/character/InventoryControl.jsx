@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Inventory from "../del/Book";
+import Inventory from "../clues/Book";
 
 const keys = {
   KeyE: "inventory",

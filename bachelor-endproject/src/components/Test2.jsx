@@ -12,6 +12,7 @@ import { useDragConstraint } from "../helpers/Drag";
 import { Block } from "../helpers/Bock";
 import * as THREE from "three";
 
+
 import {
   useCompoundBody,
   useSphere,
@@ -21,7 +22,6 @@ import {
   Physics,
   usePlane,
 } from "@react-three/cannon";
-import Deadon from "../pages/Deadon";
 
 extend(geometry);
 
@@ -62,7 +62,6 @@ function Model(props) {
   );
   return (
     <group ref={group} scale={[5, 5, 5]} {...props} dispose={null}>
-      <Deadon />
 
       <Annotation position={[-0.5, 0.1, -1]}>1</Annotation>
       <Annotation position={[0.2, 0.1, -1.5]}>2</Annotation>
