@@ -1,48 +1,54 @@
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
 import * as THREE from "three";
-import { Html } from "@react-three/drei";
-
-
+import { useNavigate } from "react-router-dom";
 
 export const DeadonScene = () => {
   return (
     <>
       <Deadon />
-      <Annotation scale={[5,5,5,]} rotation={[0, Math.PI / 2, 0]} position={[-0.5, 6, -14]}>1</Annotation>
-      <Annotation position={[0.2, 6, -10]}>2</Annotation>
-
     </>
-  )
-}
+  );
+};
 
+function Deadon() {
+  const navigate = useNavigate();
 
- function Deadon() {
-  const deadon = useGLTF("./assets/deadon.glb");
-  const animations = useAnimations(deadon.animations, deadon.scene);
+  const { scene, animations } = useGLTF("./assets/deadon.glb");
+  const { actions } = useAnimations(animations, scene);
 
   useEffect(() => {
-    const action = animations.actions["CharacterArmature|Death"];
-    action.play().setLoop(THREE.LoopOnce, 0); 
-    action.clampWhenFinished = true; 
-  }, []);
+    const action = actions["CharacterArmature|Death"];
+    action.play().setLoop(THREE.LoopOnce, 0);
+    action.clampWhenFinished = true;
 
-  deadon.scene.position.set(0, 6, -12);
-  deadon.scene.rotation.set(0, Math.PI / 2, 0); 
-  deadon.scene.scale.set(2.5, 2.5, 2.5);
-  
+    // Ensure all materials are correctly set
+    scene.traverse((object) => {
+      if (object.isMesh) {
+        object.frustumCulled = false; // Prevent disappearing due to frustum culling
+        object.castShadow = true; // Ensure it can cast shadows
+        object.receiveShadow = true; // Ensure it can receive shadows
 
-  return <primitive object={deadon.scene} />;
-}
+        if (object.material) {
+          object.material.depthWrite = true;
+          object.material.depthTest = true;
+          object.material.needsUpdate = true;
+        }
+      }
+    });
+  }, [actions, scene]);
 
+  scene.position.set(0, 5, 0);
+  scene.rotation.set(0, Math.PI / 2, 0);
+  scene.scale.set(2.5, 2.5, 2.5);
 
-function Annotation({ children, ...props }) {
+  const handleTap = () => {
+    console.log("Don tapped");
+    navigate("/examine"); // Navigate to the /vincent route
+  };
+
   return (
-    <Html center {...props} transform occlude="blending">
-      <div className="annotation" onClick={() => console.log(".")}>
-        {children}
-      </div>
-    </Html>
+    <primitive object={scene} onClick={handleTap} onPointerDown={handleTap} />
   );
 }
 

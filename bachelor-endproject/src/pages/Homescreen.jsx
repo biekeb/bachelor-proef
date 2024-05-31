@@ -69,7 +69,7 @@ const HomescreenTest = () => {
 
         {cameraRigEnabled && <CameraRig position={position} />}
 
-        <BarHome />
+        <Office />
         {/* <Blinders /> */}
         <PositionalAudio url={music} distance={1} loop />
 
@@ -105,7 +105,7 @@ function DirectionalLightHelper() {
 
   useEffect(() => {
     const directionalLight = new THREE.DirectionalLight("purple", 10); // Increased intensity
-    directionalLight.position.set(- 0.1, 0.2, -0.3);
+    directionalLight.position.set(-0.1, 0.2, -0.3);
 
     directionalLight.castShadow = true; // Enable shadow casting for the directional light
 

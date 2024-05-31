@@ -12,9 +12,7 @@ import {
 import ClueManager from "../components/clues/clueManager"; // Assuming clueManager.js is in the same directory
 import Deadon from "./Deadon";
 
-
 const POIScreen = () => {
-
   const handleButtonClick = () => {
     if (!ClueManager.clues.clue1.found) {
       ClueManager.updateClueStatus("clue1");
@@ -30,7 +28,6 @@ const POIScreen = () => {
       </EffectComposer>
       <ambientLight />
       <OrbitControls />
-      
 
       <Deadon />
 
@@ -45,11 +42,10 @@ const POIScreen = () => {
             1
           </button>
           {ClueManager.clues.clue1.found && (
-        <p>{ClueManager.clues.clue1.description}</p>
-      )}        </div>
+            <p>{ClueManager.clues.clue1.description}</p>
+          )}
+        </div>
       </Html>
-
- 
     </Canvas>
   );
 };

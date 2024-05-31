@@ -11,9 +11,9 @@ export default function Isabella() {
     action.play();
   }, []);
 
-  isabella.scene.position.set(3, 0, 0);
+  isabella.scene.position.set(3, 5, 0);
   isabella.scene.rotation.set(0, 0, 0);
-  isabella.scene.scale.set(1, 1, 1);
+  isabella.scene.scale.set(2.3, 2.3, 2.3);
 
   return <primitive object={isabella.scene} />;
 }

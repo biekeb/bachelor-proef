@@ -2,16 +2,16 @@ const ClueManager = {
   // Define initial clues
   clues: {
     clue1: {
-      found: true,
-      description: "The bullets found on the ground are .45 callbiers ACP.",
+      found: false,
+      description: "The bullets found on the ground are .45 calibers ACP.",
     },
     clue2: {
-      found: true,
+      found: false,
       description: "The lifeless body of Don Salvatore",
     },
     clue3: {
       found: false,
-      description: "",
+      description: "The gun found in the trash is a mk23 SOCOM.",
     },
     clue4: {
       found: false,
@@ -21,16 +21,16 @@ const ClueManager = {
       found: false,
       description: "",
     },
-    
-    
-
     // Add more clues as needed
   },
+
   // Function to update a clue's status
   updateClueStatus(clueName) {
     if (this.clues[clueName]) {
       this.clues[clueName].found = true;
       // Save updated clues to local storage
+      console.log(`Clue '${clueName}' saved.`);
+
       this.saveClues();
     } else {
       console.error(`Clue '${clueName}' does not exist.`);

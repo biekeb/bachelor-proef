@@ -11,6 +11,7 @@ const keys = {
   KeyA: "left",
   KeyD: "right",
   Space: "jump",
+  KeyE: "interact",
   KeyI: "inventory",
 };
 
@@ -29,6 +30,7 @@ const usePlayerControls = () => {
     left: false,
     right: false,
     jump: false,
+    interact: false,
     inventory: false,
   });
 
@@ -57,7 +59,7 @@ export const Player = (props) => {
     ...props,
   }));
 
-  const { forward, backward, left, right, jump, inventory } =
+  const { forward, backward, left, right, jump, interact, inventory } =
     usePlayerControls();
   const { camera } = useThree();
 
@@ -67,7 +69,7 @@ export const Player = (props) => {
   useEffect(() => api.velocity.subscribe((v) => (velocity.current = v)), []);
 
   useFrame((state) => {
-    ref.current.getWorldPosition(camera.position);
+    const playerPosition = ref.current.getWorldPosition(new THREE.Vector3());
     frontVector.set(0, 0, Number(backward) - Number(forward));
     sideVector.set(Number(left) - Number(right), 0, 0);
     direction
@@ -78,18 +80,20 @@ export const Player = (props) => {
 
     speed.fromArray(velocity.current);
 
-    axe.current.children[0].rotation.x = THREE.MathUtils.lerp(
-      axe.current.children[0].rotation.x,
-      Math.sin((speed.length() > 1) * state.clock.elapsedTime * 10) / 10,
-      0.1
-    );
+    if (axe.current) {
+      axe.current.children[0].rotation.x = THREE.MathUtils.lerp(
+        axe.current.children[0].rotation.x,
+        Math.sin((speed.length() > 1) * state.clock.elapsedTime * 10) / 10,
+        0.1
+      );
 
-    axe.current.rotation.copy(camera.rotation);
-    axe.current.position
-      .copy(camera.position)
-      .add(camera.getWorldDirection(rotation).multiplyScalar(1));
+      axe.current.rotation.copy(camera.rotation);
+      axe.current.position
+        .copy(camera.position)
+        .add(camera.getWorldDirection(rotation).multiplyScalar(1));
+    }
 
-    camera.position.setY(camera.position.y + 8);
+    camera.position.copy(playerPosition).add(new THREE.Vector3(0, 8, 0));
 
     api.velocity.set(direction.x, velocity.current[1], direction.z);
 
@@ -100,6 +104,11 @@ export const Player = (props) => {
 
     if (!canJump && Math.abs(velocity.current[1].toFixed(2)) < 0.05) {
       setCanJump(true);
+    }
+
+    if (interact) {
+      // Trigger interaction logic here
+      console.log("E key pressed for interaction");
     }
   });
 
@@ -112,3 +121,5 @@ export const Player = (props) => {
     </group>
   );
 };
+
+export default Player;
