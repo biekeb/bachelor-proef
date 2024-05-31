@@ -10,11 +10,6 @@ export const BarScene = () => {
     <>
       <Bar />
       <DirectionalLightHelper />
-      {/* <Street />
-      <Cube />
-      <Wall />
-
-      <Window2 /> */}
     </>
   );
 };
@@ -70,7 +65,7 @@ function Bar() {
   // Adjust the position, rotation, and scale of the bar scene
   scene.position.set(1, 5, 0);
   scene.rotation.set(0, 0, 0);
-  scene.scale.set(10, 10, 10);
+  scene.scale.set(9, 9, 9);
 
   // Traverse through the children of the scene to enable shadows for each mesh
   scene.traverse((child) => {
@@ -87,7 +82,7 @@ function DirectionalLightHelper() {
   const { scene } = useThree();
 
   useEffect(() => {
-    const directionalLight = new THREE.DirectionalLight("purple", 10); // Increased intensity
+    const directionalLight = new THREE.DirectionalLight("white", 1); // Increased intensity
     directionalLight.position.set(-0.533963, 3.63908, 0.828064);
 
     directionalLight.castShadow = true; // Enable shadow casting for the directional light

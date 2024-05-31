@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useBox } from "@react-three/cannon";
 import { useNavigate } from "react-router-dom";
-import { Html } from "@react-three/drei";
+import { Billboard, Html } from "@react-three/drei";
 
 function Trigger() {
   const [insideTrigger, setInsideTrigger] = useState(false);
   const navigate = useNavigate();
 
   const [ref] = useBox(() => ({
-    type: "Static",
-    position: [0, 1, 0],
+    type: "Kinematic",
+    position: [0, 0, 0],
     args: [2, 2, 2],
     onCollide: handleCollide,
     onCollideEnd: handleCollideEnd,
@@ -45,28 +45,30 @@ function Trigger() {
 
   return (
     <>
-      <mesh ref={ref} visible={false}>
+      <mesh ref={ref} visible={true}>
         <boxGeometry args={[2, 2, 2]} />
-        <meshStandardMaterial color="blue" />
+        <meshStandardMaterial color="blue" wireframe />
       </mesh>
       {insideTrigger && (
-        <Html position={[0, 1, 0]}>
-          <div
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              fontSize: "32px",
-              color: "white",
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-              padding: "10px",
-              borderRadius: "5px",
-            }}
-          >
-            Press E to Examine
-          </div>
-        </Html>
+        <Billboard position={[0, 0, 0]}>
+          <Html position={[0, 0, 0]}>
+            <div
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                fontSize: "32px",
+                color: "white",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                padding: "10px",
+                borderRadius: "5px",
+              }}
+            >
+              Press E to Examine
+            </div>
+          </Html>
+        </Billboard>
       )}
     </>
   );

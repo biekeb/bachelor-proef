@@ -25,6 +25,7 @@
     "react-router-dom": "^6.21.3",
     "react-scripts": "5.0.1",
     "react-three-fiber": "^6.0.13",
+    "sweetalert2": "^11.11.0",
     "three": "^0.161.0",
     "use-cannon": "^0.5.3",
     "web-vitals": "^2.1.4",
