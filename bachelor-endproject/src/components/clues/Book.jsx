@@ -37,12 +37,13 @@ const Inventory = () => {
         </button>
       </div>
       {currentPage === "clues" && (
-        <div className="book">
+        <div className="inventory-clues">
           <h2>Book of Clues</h2>
           <ul>
             {Object.entries(foundClues).map(([clueName, clueData]) => (
               <li key={clueName}>
                 <p>{clueData.description}</p>
+                <img src={clueData.imageUrl} alt={`Clue ${clueName}`} />
               </li>
             ))}
           </ul>

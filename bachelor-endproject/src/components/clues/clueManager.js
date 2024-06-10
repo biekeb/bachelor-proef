@@ -1,17 +1,26 @@
+import cluerevolver from '../../styling/images/cluerevolver.png'
+
 const ClueManager = {
   // Define initial clues
   clues: {
     clue1: {
       found: false,
       description: "The bullets found on the ground are .45 calibers ACP.",
+      imageUrl: cluerevolver,
+
+
     },
     clue2: {
       found: false,
       description: "The lifeless body of Don Salvatore",
+      imageUrl: cluerevolver,
+
     },
     clue3: {
-      found: false,
+      found: true,
       description: "The gun found in the trash is a mk23 SOCOM.",
+      imageUrl: cluerevolver,
+
     },
     clue4: {
       found: false,
@@ -39,7 +48,7 @@ const ClueManager = {
 
   // Function to retrieve clues from local storage
   retrieveClues() {
-    const storedClues = localStorage.getItem("clues");
+    const storedClues = sessionStorage.getItem("clues");
     if (storedClues) {
       this.clues = JSON.parse(storedClues);
     }
@@ -48,7 +57,7 @@ const ClueManager = {
 
   // Function to save clues to local storage
   saveClues() {
-    localStorage.setItem("clues", JSON.stringify(this.clues));
+    sessionStorage.setItem("clues", JSON.stringify(this.clues));
   },
 };
 

@@ -32,7 +32,7 @@ const CharacterManager = {
   
     // Function to retrieve characters from local storage
     retrieveCharacters() {
-      const storedCharacters = localStorage.getItem("characters");
+      const storedCharacters = sessionStorage.getItem("characters");
       if (storedCharacters) {
         this.characters = JSON.parse(storedCharacters);
       }
@@ -41,7 +41,7 @@ const CharacterManager = {
   
     // Function to save characters to local storage
     saveCharacters() {
-      localStorage.setItem("characters", JSON.stringify(this.characters));
+      sessionStorage.setItem("characters", JSON.stringify(this.characters));
     },
   };
   
