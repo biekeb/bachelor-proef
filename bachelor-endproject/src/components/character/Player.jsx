@@ -54,7 +54,7 @@ export const Player = (props) => {
   const axe = useRef();
   const [ref, api] = useBox(() => ({
     mass: 1,
-    position: [0, 10, 0],
+    position: [0, 6, 0],
     userData: { name: "Player" },
     ...props,
   }));
@@ -117,7 +117,7 @@ export const Player = (props) => {
       ref={axe}
       onPointerMissed={(e) => (axe.current.children[0].rotation.x = -0.5)}
     >
-      <Body position={[0, 4, 0]} />
+      <Body position={[0, 6, 0]} frustumCulled={false} />
     </group>
   );
 };
