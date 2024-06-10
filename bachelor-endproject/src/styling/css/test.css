@@ -17,10 +17,10 @@ body,
   user-select: none;
   overflow: hidden;
 }
-
+/* 
 #root {
   overflow: auto;
-}
+} */
 
 body {
   position: fixed;

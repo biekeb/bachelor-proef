@@ -8,8 +8,10 @@ import { useEffect } from "react";
 export const BarScene = () => {
   return (
     <>
+      <ambientLight intensity={1} />
       <Bar />
       <DirectionalLightHelper />
+      <Cube />
     </>
   );
 };
@@ -17,27 +19,38 @@ export const BarScene = () => {
 const Cube = (props) => {
   const [ref] = useBox(() => ({
     mass: 0,
-    position: [0, 0, 10], // Ensure the cube is positioned correctly
-    args: [25, 10, 1], // Set appropriate dimensions for the cube
+    position: [0, 6, 11], // Ensure the cube is positioned correctly
+    args: [50, 10, 1], // Set appropriate dimensions for the cube
   }));
 
   const [r2ef] = useBox(() => ({
     mass: 0,
-    position: [0, 0, -17], // Ensure the cube is positioned correctly
-    args: [50, 10, 1], // Set appropriate dimensions for the cube
+    position: [20, 6, 0], // Ensure the cube is positioned correctly
+    args: [1, 10, 20], // Set appropriate dimensions for the cube
+  }));
+
+  const [r3ef] = useBox(() => ({
+    mass: 0,
+    position: [-25, 6, 0], // Ensure the cube is positioned correctly
+    args: [1, 10, 20], // Set appropriate dimensions for the cube
   }));
 
   return (
     <>
-      <mesh position={[0, 10, 10]}>
-        <boxGeometry args={[25, 10, 1]} />
-        <meshStandardMaterial color="green" />
+      <mesh position={[0, 6, 11]}>
+        <boxGeometry args={[50, 10, 1]} />
+        <meshStandardMaterial wireframe color="green" />
       </mesh>
 
-      {/* <mesh position={[ 0, 10, -17]}>
-          <boxGeometry args={[25, 10, 1]} />
-          <meshStandardMaterial color='green' />
-        </mesh> */}
+      <mesh position={[20, 6, 0]}>
+        <boxGeometry args={[1, 10, 20]} />
+        <meshStandardMaterial wireframe color="green" />
+      </mesh>
+
+      <mesh position={[-25, 6, 0]}>
+        <boxGeometry args={[1, 10, 20]} />
+        <meshStandardMaterial wireframe color="green" />
+      </mesh>
     </>
   );
 };

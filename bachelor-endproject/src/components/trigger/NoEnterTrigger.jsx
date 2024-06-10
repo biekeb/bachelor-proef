@@ -6,6 +6,8 @@ function NotEnterTrigger() {
     mass: 0,
     position: [25, 6, 0],
     args: [5, 5, 20],
+    collisionFilterGroup: 1, // Adjust these values as needed
+    collisionFilterMask: 1, // Adjust these values as needed
   }));
 
   return (

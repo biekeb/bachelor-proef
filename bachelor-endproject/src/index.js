@@ -17,6 +17,7 @@ import Homescreen from "./pages/Homescreen.jsx";
 import Inventory from "./components/clues/Book.jsx";
 import Test2 from "./components/Test2.jsx";
 import SceneVincentInterview from "./components/poi/VincentInterview.jsx";
+import { PhoneScreen } from "./pages/PhoneScreen.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
   {
     path: "/vincent",
     element: <SceneVincentInterview />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/phone",
+    element: <PhoneScreen/>,
     errorElement: <ErrorPage />,
   },
   

@@ -2,6 +2,7 @@ import React from "react";
 import { useBox } from "@react-three/cannon";
 import ClueManager from "../clues/clueManager";
 import Swal from "sweetalert2";
+import cluesound from "../../styling/sounds/clue.wav";
 
 const TrashCanTrigger = (props) => {
   const [ref] = useBox(() => ({
@@ -49,7 +50,10 @@ const TrashCanTrigger = (props) => {
 
   const handleClickGun = () => {
     console.log("Gun found!");
-    // window.alert("new clue");
+
+    const audio = new Audio(cluesound);
+    audio.play();
+
     const Toast = Swal.mixin({
       toast: true,
       position: "top-center",
@@ -62,7 +66,6 @@ const TrashCanTrigger = (props) => {
       },
     });
     Toast.fire({
-      icon: "success",
       title: "Gun found! New clue added to inventory.",
     });
 

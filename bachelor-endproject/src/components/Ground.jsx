@@ -8,7 +8,7 @@ export const Ground = (props) => {
   const texture = useLoader(THREE.TextureLoader, grass);
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
   return (
-    <mesh ref={ref} receiveShadow>
+    <mesh ref={ref}>
       <planeGeometry args={[100, 100]} />
       <meshStandardMaterial
         map={texture}
