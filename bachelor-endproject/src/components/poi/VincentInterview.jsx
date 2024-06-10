@@ -2,10 +2,18 @@ import React, { useState } from "react";
 import data from "./VincentData";
 import { Canvas } from "react-three-fiber";
 import Vincent from "./Vincent";
+import {
+  Bloom,
+  DepthOfField,
+  EffectComposer,
+  Noise,
+  ColorAverage,
+} from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 
 export default function SceneVincentInterview() {
   const [currentNode, setCurrentNode] = useState(data);
-  const [detectiveMeter, setDetectiveMeter] = useState(0);
+  const [detectiveMeter, setDetectiveMeter] = useState(40);
 
   const handleResponse = (response) => {
     const nextNode = currentNode.responses[response];
@@ -36,18 +44,31 @@ export default function SceneVincentInterview() {
         <QuestionNode node={currentNode} onResponse={handleResponse} />
 
         <Canvas>
+          <EffectComposer>
+            <DepthOfField
+              focusDistance={0}
+              focalLength={0.02}
+              bokehScale={2}
+              height={480}
+            />
+            <Bloom
+              luminanceThreshold={0}
+              luminanceSmoothing={0.9}
+              height={300}
+            />
+            <Noise opacity={0.02} />
+            <ColorAverage
+              blendFunction={BlendFunction.NORMAL} // blend mode
+            />
+          </EffectComposer>
+
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
           <Vincent />
         </Canvas>
         <div>
           <div className="detective-meter">
-            <h1>Interview with Vincent</h1>
-            <p>
-              Ask Vincent the bartender questions to get information about the
-              murderer
-            </p>
-            Detective Meter: {detectiveMeter}
+            Detective Meter: {detectiveMeter} %
           </div>
         </div>
       </div>
@@ -57,16 +78,20 @@ export default function SceneVincentInterview() {
 
 function QuestionNode({ node, onResponse }) {
   return (
-    <div className="question-node">
-      <ul>
-        {node.responses &&
-          Object.keys(node.responses).map((response, index) => (
-            <li key={index}>
-              <button onClick={() => onResponse(response)}>{response}</button>
-            </li>
-          ))}
-      </ul>
-      <p>{node.question}</p>
+    <div>
+      <div className="question-node">
+        <ul>
+          {node.responses &&
+            Object.keys(node.responses).map((response, index) => (
+              <li key={index}>
+                <button onClick={() => onResponse(response)}>{response}</button>
+              </li>
+            ))}
+        </ul>
+      </div>
+      <div className="node-awnser">
+        <p>{node.question}</p>
+      </div>
     </div>
   );
 }

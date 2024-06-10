@@ -2,23 +2,26 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     height: 100vh;
     width: 100%;
 }
 
 .interview-div{
-margin: 5%;
+  background-image: url('../images/jj.png'); /* Path to your button background image */
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: luminosity;
+
 }
 
 .detective-meter{
-    background-image: url('../images/dd.png'); /* Path to your button background image */
+    background-image: url('../images/vincentboard.png'); /* Path to your button background image */
     background-size: cover;
     background-position: center;
     border: none;
     width: 400px;
     height: 550px;
-    mix-blend-mode: multiply;
 
 }
 
@@ -38,10 +41,16 @@ margin: 5%;
     background-image: url('../images/rippedpaper.png'); /* Path to your button background image */
     background-size: cover;
     background-position: center;
-    border: none;
+    border: none; 
     border-radius: 5px;
     cursor: pointer;
     background-color: rgba(24, 100, 171, 0.1);
 
+  
+}
+
+
+.node-awnser{
+  border: red 1pt solid;
   
 }

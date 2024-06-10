@@ -10,9 +10,9 @@ export default function Vincent() {
     action.play();
   }, []);
 
-  vincent.scene.position.set(0, -3, 0);
+  vincent.scene.position.set(0, -6, 0);
   vincent.scene.rotation.set(0, 0, 0);
-  vincent.scene.scale.set(2.5, 2.5, 2.5);
+  vincent.scene.scale.set(5, 5, 5);
 
   return <primitive object={vincent.scene} />;
 }
