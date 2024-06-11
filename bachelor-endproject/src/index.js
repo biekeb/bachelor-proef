@@ -20,6 +20,7 @@ import Test2 from "./components/Test2.jsx";
 import SceneVincentInterview from "./components/poi/VincentInterview.jsx";
 import { PhoneScreen } from "./pages/PhoneScreen.jsx";
 import EndScene from "./pages/EndScene.jsx";
+import { SceneIsabellaInterview } from "./components/poi/IsabellaInterview.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
   {
     path: "/vincent",
     element: <SceneVincentInterview />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/isabella",
+    element: <SceneIsabellaInterview />,
     errorElement: <ErrorPage />,
   },
   {

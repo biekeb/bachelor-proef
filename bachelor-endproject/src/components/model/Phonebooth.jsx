@@ -6,7 +6,7 @@ export function Phonebooth() {
   const navigate = useNavigate();
   const handleClick = () => {
     console.log("PHONE CLICKED!");
-    navigate("/phone");
+    navigate("/end");
   };
 
   const { scene } = useGLTF("./assets/phonebooth.glb");
