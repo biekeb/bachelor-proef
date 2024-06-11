@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import videoVincent from "../styling/images/All Scenes.mp4";
+import videoVincent from "../styling/images/VincentEnd.mp4";
+import videoAnthony from "../styling/images/AnthonyEnd.mp4";
+import videoIsabella from "../styling/images/IsabellaEnd.mp4";
 
 const EndScene = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -33,10 +35,10 @@ const EndScene = () => {
           <button onClick={() => handleButtonClick(videoVincent)}>
             Ending 1
           </button>
-          <button onClick={() => handleButtonClick(videoVincent)}>
+          <button onClick={() => handleButtonClick(videoAnthony)}>
             Ending 2
           </button>
-          <button onClick={() => handleButtonClick(videoVincent)}>
+          <button onClick={() => handleButtonClick(videoIsabella)}>
             Ending 3
           </button>
         </div>
