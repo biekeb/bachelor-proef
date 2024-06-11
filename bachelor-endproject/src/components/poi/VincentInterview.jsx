@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "./VincentData";
+import data from "./AnthonyData";
 import { Canvas } from "react-three-fiber";
 import Vincent from "./Vincent";
 import {
@@ -10,6 +10,7 @@ import {
   ColorAverage,
 } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
+import questionmark from "../../styling/images/Questionmark.png";
 
 export default function SceneVincentInterview() {
   const [currentNode, setCurrentNode] = useState(data);
@@ -34,7 +35,7 @@ export default function SceneVincentInterview() {
       <button>
         <a href="/app">Back to bar</a>
       </button>
-      <h1>Interview with Vincent</h1>
+      <h1>Intorigation Vincent</h1>
       <p>
         Ask Vincent the bartender questions to get information about the
         murderer
@@ -62,8 +63,9 @@ export default function SceneVincentInterview() {
             />
           </EffectComposer>
 
-          <ambientLight />
-          <pointLight position={[10, 10, 10]} />
+          <ambientLight intensity={0.5} />
+          <spotLight position={[0, 5, 5]} intensity={50} />
+
           <Vincent />
         </Canvas>
         <div>
@@ -84,7 +86,11 @@ function QuestionNode({ node, onResponse }) {
           {node.responses &&
             Object.keys(node.responses).map((response, index) => (
               <li key={index}>
-                <button onClick={() => onResponse(response)}>{response}</button>
+                <button onClick={() => onResponse(response)}>
+                  <img src={questionmark} alt="response" />
+
+                  {response}
+                </button>
               </li>
             ))}
         </ul>
