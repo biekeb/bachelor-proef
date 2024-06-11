@@ -52,19 +52,28 @@
   .inventory-clues ul{
     border: #e67e22 1pt solid;
     margin: 0% 15%;
+    list-style-type: none;
+
   }
+
+
   
 
   /*character*/
   .characters {
     
     border: 1pt solid blue;
+    margin: 0% 17%;
   }
-  .characters li{
+  .character-div{
     border: 1pt solid black;
+    display: flex;
+    margin-right: 50%;
+    flex-direction: column;
   }
   .characters ul{
     border: 1pt solid red;
+    list-style-type: none;
   }
 
 
