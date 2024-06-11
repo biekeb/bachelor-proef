@@ -9,6 +9,7 @@ import "./styling/css/test.css";
 import "./styling/css/book.css";
 import "./styling/css/popup.css";
 import "./styling/css/interview.css";
+import "./styling/css/end.css";
 
 
 import App from "./App.js";
@@ -18,6 +19,7 @@ import Inventory from "./components/clues/Book.jsx";
 import Test2 from "./components/Test2.jsx";
 import SceneVincentInterview from "./components/poi/VincentInterview.jsx";
 import { PhoneScreen } from "./pages/PhoneScreen.jsx";
+import EndScene from "./pages/EndScene.jsx";
 
 const router = createBrowserRouter([
   {
@@ -47,8 +49,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/phone",
-    element: <PhoneScreen/>,
+    path: "/end",
+    element: <EndScene/>,
     errorElement: <ErrorPage />,
   },
   
