@@ -8,7 +8,7 @@ import { useEffect } from "react";
 export const BarScene = () => {
   return (
     <>
-      <ambientLight intensity={1} />
+      <ambientLight intensity={0.1} />
       <Bar />
       <DirectionalLightHelper />
       <Cube />
@@ -67,45 +67,45 @@ const Cube = (props) => {
 
   return (
     <>
-      <mesh position={[0, 6, 11]}>
+      {/* <mesh position={[0, 6, 11]}>
         <boxGeometry args={[50, 10, 1]} />
-        <meshStandardMaterial wireframe color="green" />
+        <meshStandardMaterial color="none" />
       </mesh>
 
       <mesh position={[20, 6, 0]}>
         <boxGeometry args={[1, 10, 25]} />
-        <meshStandardMaterial wireframe color="green" />
+        <meshStandardMaterial color="none" />
       </mesh>
 
       <mesh position={[-25, 6, 0]}>
         <boxGeometry args={[1, 10, 20]} />
-        <meshStandardMaterial wireframe color="green" />
+        <meshStandardMaterial color="none" />
       </mesh>
 
       <mesh position={[-14, 6, -13]}>
         <boxGeometry args={[20, 10, 1]} />
-        <meshStandardMaterial wireframe color="green" />
+        <meshStandardMaterial color="none" />
       </mesh>
 
       <mesh position={[9, 6, -13]}>
         <boxGeometry args={[20, 10, 1]} />
-        <meshStandardMaterial wireframe color="green" />
+        <meshStandardMaterial color="none" />
       </mesh>
 
       <mesh position={[0, 6, -27]}>
         <boxGeometry args={[20, 10, 1]} />
-        <meshStandardMaterial wireframe color="green" />
+        <meshStandardMaterial color="none" />
       </mesh>
 
       <mesh position={[-6, 6, -20]}>
         <boxGeometry args={[1, 10, 12]} />
-        <meshStandardMaterial wireframe color="green" />
+        <meshStandardMaterial color="none" />
       </mesh>
 
       <mesh position={[8, 6, -20]}>
         <boxGeometry args={[1, 10, 12]} />
-        <meshStandardMaterial wireframe color="green" />
-      </mesh>
+        <meshStandardMaterial wireframe color="none" />
+      </mesh> */}
     </>
   );
 };
@@ -167,12 +167,12 @@ function DirectionalLightHelper() {
 
     scene.add(directionalLight);
 
-    const helper = new THREE.DirectionalLightHelper(directionalLight, 10);
-    scene.add(helper);
+    // const helper = new THREE.DirectionalLightHelper(directionalLight, 10);
+    // scene.add(helper);
 
     return () => {
       scene.remove(directionalLight);
-      scene.remove(helper);
+      // scene.remove(helper);
     };
   }, [scene]);
 

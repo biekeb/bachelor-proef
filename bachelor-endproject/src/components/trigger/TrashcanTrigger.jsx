@@ -51,8 +51,8 @@ const TrashCanTrigger = (props) => {
   const handleClickGun = () => {
     console.log("Gun found!");
 
-    const audio = new Audio(cluesound);
-    audio.play();
+    // const audio = new Audio(cluesound);
+    // audio.play();
 
     const Toast = Swal.mixin({
       toast: true,
@@ -74,22 +74,22 @@ const TrashCanTrigger = (props) => {
 
   return (
     <>
-      <mesh ref={ref} onClick={handleClickNoGun}>
+      <mesh ref={ref} onClick={handleClickNoGun} visible={false}>
         <boxGeometry args={[6, 6, 6]} />
         <meshStandardMaterial wireframe color="grey" />
       </mesh>
 
-      <mesh ref={ref2} onClick={handleClickGun}>
+      <mesh ref={ref2} onClick={handleClickGun} visible={false}>
         <boxGeometry args={[5, 5, 5]} />
         <meshStandardMaterial wireframe color="grey" />
       </mesh>
 
-      <mesh ref={ref3} onClick={handleClickNoGun}>
+      <mesh ref={ref3} onClick={handleClickNoGun} visible={false}>
         <boxGeometry args={[5, 5, 5]} />
         <meshStandardMaterial wireframe color="grey" />
       </mesh>
 
-      <mesh ref={ref4} onClick={handleClickNoGun}>
+      <mesh ref={ref4} onClick={handleClickNoGun} visible={false}>
         <boxGeometry args={[5, 5, 5]} />
         <meshStandardMaterial wireframe color="grey" />
       </mesh>
