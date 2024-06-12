@@ -10,9 +10,9 @@ export default function Anthony() {
     action.play();
   }, []);
 
-  anthony.scene.position.set(5, 6, -15);
-  anthony.scene.rotation.set(0, Math.PI / -2, 0);
-  anthony.scene.scale.set(1.8, 1.8, 1.8);
+  anthony.scene.position.set(0, -6, 0);
+  anthony.scene.rotation.set(0, 0, 0);
+  anthony.scene.scale.set(5, 5, 5);
 
   return <primitive object={anthony.scene} />;
 }

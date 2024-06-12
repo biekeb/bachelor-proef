@@ -2,28 +2,28 @@ import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function IsabellaInBar() {
+export default function AnthonyInBar() {
   const navigate = useNavigate();
-  const isabella = useGLTF("./assets/isabella.glb");
-  const animations = useAnimations(isabella.animations, isabella.scene);
+  const anthony = useGLTF("./assets/luca.glb");
+  const animations = useAnimations(anthony.animations, anthony.scene);
 
   useEffect(() => {
     const action = animations.actions["CharacterArmature|Idle"];
     action.play();
   }, []);
 
-  isabella.scene.position.set(5, 6, -25);
-  isabella.scene.rotation.set(0, -20, 0);
-  isabella.scene.scale.set(1.7, 1.7, 1.7);
-  isabella.scene.frustumCulled = true;
+  anthony.scene.position.set(5, 6, -15);
+  anthony.scene.rotation.set(0, Math.PI / -2, 0);
+  anthony.scene.scale.set(1.8, 1.8, 1.8);
+  anthony.scene.frustumCulled = true;
 
   const handleTap = () => {
-    navigate("/isabella");
+    navigate("/anthony");
   };
 
   return (
     <primitive
-      object={isabella.scene}
+      object={anthony.scene}
       onClick={handleTap}
       onPointerDown={handleTap}
     />

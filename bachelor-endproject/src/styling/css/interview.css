@@ -12,6 +12,7 @@
   background-size: cover;
   background-position: center;
   mix-blend-mode: luminosity;
+  padding: 10px 0 0 10px ;
 
 }
 
@@ -22,7 +23,26 @@
     border: none;
     width: 400px;
     height: 550px;
+}
 
+
+.detective-meter-anthony{
+  background-image: url('../images/boardanthony.png'); /* Path to your button background image */
+  background-size: cover;
+  background-position: center;
+  border: none;
+  width: 400px;
+  height: 550px;
+}
+
+
+.detective-meter-isa{
+  background-image: url('../images/boardisa.png'); /* Path to your button background image */
+  background-size: cover;
+  background-position: center;
+  border: none;
+  width: 400px;
+  height: 550px;
 }
 
 .question-node ul {

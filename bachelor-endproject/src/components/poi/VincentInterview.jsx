@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import data from "./AnthonyData";
+import data from "./VincentData";
 import { Canvas } from "react-three-fiber";
 import Vincent from "./Vincent";
 import {
@@ -32,12 +32,12 @@ export default function SceneVincentInterview() {
 
   return (
     <div className="interview-div">
-      <button>
+      <button className="end-btn">
         <a href="/app">Back to bar</a>
       </button>
       <h1>Intorigation Vincent</h1>
       <p>
-        Ask Vincent the bartender questions to get information about the
+        Ask Vincent the bar owner questions to get information about the
         murderer
       </p>
 
@@ -96,6 +96,7 @@ function QuestionNode({ node, onResponse }) {
         </ul>
       </div>
       <div className="node-awnser">
+        <h2>Vincent awnser:</h2>
         <p>{node.question}</p>
       </div>
     </div>

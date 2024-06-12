@@ -19,16 +19,16 @@ import { BlendFunction } from "postprocessing";
 import Luca from "./components/del/Luca";
 import { BarScene } from "./pages/BarScene";
 import DeadonScene from "./pages/Deadon";
-import Isabella from "./components/poi/Isabella";
 import TrashcanTrigger from "./components/trigger/TrashcanTrigger";
 import Rat from "./components/model/Rat";
 import { VincentInBar } from "./components/poi/VincentInBar";
 import { Phonebooth } from "./components/model/Phonebooth";
 import { Letter } from "./components/model/Letter";
 import { TutorialSreen } from "./pages/TutorialSreen";
-import Anthony from "./components/poi/Anthony";
 import music from "../src/styling/sounds/menu.mp3";
 import leter from "../src/styling/images/letter.png";
+import IsabellaInBar from "./components/poi/IsabellaInBar";
+import AnthonyInBar from "./components/poi/AnthonyInBar";
 
 export default function App() {
   const [loader, setLoader] = useState(true);
@@ -71,12 +71,12 @@ export default function App() {
     audio.loop = true;
     audio.play();
     setIsMusicPlaying(true);
-    localStorage.setItem("isMusicPlaying", "true"); // Save music state to localStorage
+    sessionStorage.setItem("isMusicPlaying", "true"); // Save music state to localStorage
   };
 
   const stopMusic = () => {
     setIsMusicPlaying(false);
-    localStorage.setItem("isMusicPlaying", "false"); // Save music state to localStorage
+    sessionStorage.setItem("isMusicPlaying", "false"); // Save music state to localStorage
   };
 
   return (
@@ -136,8 +136,8 @@ export default function App() {
               <Luca />
               <BarScene />
               <VincentInBar />
-              <Anthony />
-              <Isabella />
+              <AnthonyInBar />
+              <IsabellaInBar />
               <Phonebooth />
               <TrashcanTrigger />
               <Letter onClick={() => setShowLetter(true)} /> {/* Pass callback here */}

@@ -69,7 +69,7 @@ const data = {
         },
       },
     },
-    "Why are you so dressed up?": {
+    "You look very nice, why are you so dressed up?": {
       question: "That's quite inappropriate.",
       impactLevel: -10,
       relevance: 1,
@@ -77,6 +77,31 @@ const data = {
         "Can you explain the note from Vincent that we found in your possession?": {
           question: "What about it?",
           relevance: 1,
+
+          responses: {
+            "Did you and Don have a troubled relationship?": {
+              question: "No, I loved him.",
+              relevance: 1,
+            },
+            "What is your relationship with Vincent?": {
+              question: "We had a relationship in the past, but we've had little contact recently.",
+              relevance: 1,
+              responses: {
+                "Why did Vincent write you the letter?": {
+                  question: "Vincent wrote the letter to express remorse and regret about our past relationship.",
+                  relevance: 1,
+                },
+                "How did Vincent learn about your altercation with Don?": {
+                  question: "I'm not sure, but he might have heard about it from someone.",
+                  relevance: 1,
+                },
+                "Has Vincent ever shown interest in rekindling your relationship?": {
+                  question: "No, he hasn't indicated any such interest.",
+                  relevance: 1,
+                },
+              },
+            },
+          },
         },
         "Did you have any interactions with the victim?": {
           question: "Yes, I did.",

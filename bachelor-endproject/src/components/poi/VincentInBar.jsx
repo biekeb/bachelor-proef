@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useNavigate } from "react-router-dom";
+import CharacterManager from "../clues/CharacterManager";
 
 export function VincentInBar() {
   const navigate = useNavigate();
@@ -18,8 +19,8 @@ export function VincentInBar() {
   vincent.scene.frustumCulled = true;
 
   const handleTap = () => {
-    console.log("Vincent tapped");
     navigate("/vincent");
+    CharacterManager.updateCharacterStatus("vincent"); // Update character status
   };
 
   return (
