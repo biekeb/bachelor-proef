@@ -24,20 +24,21 @@ export const TutorialSreen = ({ onClose, playMusic }) => {
   };
 
   return (
-    <div className="tut" style={{ textAlign: "center" }}>
+    <div className="tut">
       <div>
         <div>
           <button
+            id="prev-btn"
             onClick={handlePrevious}
             disabled={currentIndex <= 0}
             style={{
-              marginRight: "10px",
               display: currentIndex > 0 ? "inline-block" : "none",
             }}
           >
             Previous
           </button>
           <button
+            id="next-btn"
             onClick={handleNext}
             disabled={currentIndex >= images.length - 1}
             style={{ display: "inline-block" }}
@@ -47,16 +48,13 @@ export const TutorialSreen = ({ onClose, playMusic }) => {
         </div>
       </div>
       <button
+        className="end-btn"
         onClick={handleClose}
         style={{ marginTop: "20px", display: "block" }}
       >
         Close
       </button>
-      <img
-        src={images[currentIndex]}
-        alt="tutorial"
-        style={{ maxWidth: "100%", height: "auto" }}
-      />
+      <img src={images[currentIndex]} alt="tutorial" />
     </div>
   );
 };

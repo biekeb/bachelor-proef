@@ -100,3 +100,41 @@
     position: absolute;
     z-index: 1000 !important;
   }
+
+#prev-btn {
+  background-color: #2b2119;
+  color: white;
+  padding: 16px 20px;
+  border: #e5dccd 1pt solid;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: inset 0 -5px 10px  #0c0c0c;
+  box-shadow: inset 0 5px 10px  #0c0c0c;
+  left: 5%;
+  top: 50%;
+}
+
+#next-btn{
+  background-color: #2b2119;
+  color: white;
+  padding: 16px 20px;
+  border: #e5dccd 1pt solid;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: inset 0 -5px 10px  #0c0c0c;
+  box-shadow: inset 0 5px 10px  #0c0c0c;
+  left: 85%;
+  top: 50%;
+}
+
+.tut{
+  border: 1pt red solid;
+}
+
+.tut-btn{
+  border: 1pt blue solid;
+  width: 100%;
+  height: 10vh;
+  position: absolute;
+
+}
