@@ -3,9 +3,16 @@ import { useNavigate } from "react-router-dom";
 import videoVincent from "../styling/images/VincentEnd.mp4";
 import videoAnthony from "../styling/images/AnthonyEnd.mp4";
 import videoIsabella from "../styling/images/IsabellaEnd.mp4";
-
 import { useAnimations, useGLTF, CameraControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import {
+  Bloom,
+  DepthOfField,
+  EffectComposer,
+  Noise,
+  ColorAverage,
+} from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 
 const EndScene = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -71,12 +78,31 @@ const EndScene = () => {
     <>
       {isCanvasVisible && (
         <Canvas
+          style={{ zIndex: "-1" }}
           className="deadon-canvas"
           shadows="basic"
           eventSource={document.getElementById("root")}
           eventPrefix="client"
           camera={{ position: initialCameraPosition, fov: 45 }}
         >
+          <EffectComposer>
+            <DepthOfField
+              focusDistance={0}
+              focalLength={0.02}
+              bokehScale={2}
+              height={480}
+            />
+            <Bloom
+              luminanceThreshold={0}
+              luminanceSmoothing={0.9}
+              height={300}
+            />
+            <Noise opacity={0.02} />
+            <ColorAverage
+              blendFunction={BlendFunction.NORMAL} // blend mode
+            />
+          </EffectComposer>
+
           <ambientLight intensity={1} />
           <spotLight position={[0, 5, 5]} intensity={50} />
           <Vincent />
@@ -93,9 +119,9 @@ const EndScene = () => {
           />
         </Canvas>
       )}
-      <div className={`container ${selectedVideo ? "video-container" : ""}`}>
+      <div className={`container ${selectedVideo ? "" : ""}`}>
         {confirmSelection ? (
-          <div className="confirmation-dialog">
+          <div className="end-button-container">
             <h2>Are you sure this person is the killer?</h2>
             <button className="confirm-btn" onClick={handleConfirmYes}>
               Yes
@@ -105,31 +131,33 @@ const EndScene = () => {
             </button>
           </div>
         ) : selectedVideo ? (
-          <div className="video-wrapper">
-            <video
-              className="full-screen-video"
-              autoPlay
-              onEnded={handleVideoEnd}
-            >
-              <source src={selectedVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div className="video-container">
+            <div className="video-wrapper">
+              <video
+                className="full-screen-video"
+                autoPlay
+                onEnded={handleVideoEnd}
+              >
+                <source src={selectedVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         ) : (
-          <div className="button-container">
+          <div className="end-button-container">
             <h1>Acuse who will be brought to justice</h1>
 
             <div className="end-btn-flex">
-              <div>
+              <div className="tttt">
                 <h2>choice 1</h2>
                 <button
                   className="end-btn"
-                  onClick={() => handleButtonClick(videoVincent, [5, 0, 0])}
+                  onClick={() => handleButtonClick(videoVincent, [-5, 0, 0])}
                 >
                   Acuse Vincent
                 </button>
               </div>
-              <div>
+              <div className="tttt">
                 <h2>choice 2</h2>
                 <button
                   className="end-btn"
@@ -138,11 +166,11 @@ const EndScene = () => {
                   Acuse Anthony
                 </button>
               </div>
-              <div>
+              <div className="tttt">
                 <h2>choice 3</h2>
                 <button
                   className="end-btn"
-                  onClick={() => handleButtonClick(videoIsabella, [-5, 0, 0])}
+                  onClick={() => handleButtonClick(videoIsabella, [5, 0, 0])}
                 >
                   Acuse Isabella
                 </button>

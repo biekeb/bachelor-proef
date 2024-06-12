@@ -46,7 +46,7 @@ export default function App() {
 
   useEffect(() => {
     // Check localStorage for music state
-    const musicState = localStorage.getItem("isMusicPlaying");
+    const musicState = sessionStorage.getItem("isMusicPlaying");
     if (musicState === "true") {
       playMusic();
       setShowTutorialScreen(false); // If the music was playing, assume tutorial was closed
@@ -138,7 +138,7 @@ export default function App() {
               <VincentInBar />
               <AnthonyInBar />
               <IsabellaInBar />
-              <Phonebooth />
+              <Phonebooth  />
               <TrashcanTrigger />
               <Letter onClick={() => setShowLetter(true)} /> {/* Pass callback here */}
             </Physics>
