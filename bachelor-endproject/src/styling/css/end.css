@@ -11,6 +11,7 @@
   .button-container {
     text-align: center;
     color: white;
+    z-index: 999;
   }
   
   .full-screen-video {
@@ -64,3 +65,25 @@
 
   }
 
+
+  .end-canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  @media screen and (min-width: 1000px) {
+    .end-btn-flex{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 1000px;
+    }
+
+  }
+  
