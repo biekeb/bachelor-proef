@@ -26,13 +26,43 @@ const Cube = (props) => {
   const [r2ef] = useBox(() => ({
     mass: 0,
     position: [20, 6, 0], // Ensure the cube is positioned correctly
-    args: [1, 10, 20], // Set appropriate dimensions for the cube
+    args: [1, 10, 25], // Set appropriate dimensions for the cube
   }));
 
   const [r3ef] = useBox(() => ({
     mass: 0,
     position: [-25, 6, 0], // Ensure the cube is positioned correctly
     args: [1, 10, 20], // Set appropriate dimensions for the cube
+  }));
+
+  const [r4ef] = useBox(() => ({
+    mass: 0,
+    position: [-14, 6, -13], // Ensure the cube is positioned correctly
+    args: [20, 10, 1], // Set appropriate dimensions for the cube
+  }));
+
+  const [r5ef] = useBox(() => ({
+    mass: 0,
+    position: [9, 6, -13], // Ensure the cube is positioned correctly
+    args: [20, 10, 1], // Set appropriate dimensions for the cube
+  }));
+
+  const [r6ef] = useBox(() => ({
+    mass: 0,
+    position: [0, 6, -27], // Ensure the cube is positioned correctly
+    args: [20, 10, 1], // Set appropriate dimensions for the cube
+  }));
+
+  const [r7ef] = useBox(() => ({
+    mass: 0,
+    position: [-6, 6, -20], // Ensure the cube is positioned correctly
+    args: [1, 10, 12], // Set appropriate dimensions for the cube
+  }));
+
+  const [r8ef] = useBox(() => ({
+    mass: 0,
+    position: [8, 6, -20], // Ensure the cube is positioned correctly
+    args: [1, 10, 12], // Set appropriate dimensions for the cube
   }));
 
   return (
@@ -43,12 +73,37 @@ const Cube = (props) => {
       </mesh>
 
       <mesh position={[20, 6, 0]}>
-        <boxGeometry args={[1, 10, 20]} />
+        <boxGeometry args={[1, 10, 25]} />
         <meshStandardMaterial wireframe color="green" />
       </mesh>
 
       <mesh position={[-25, 6, 0]}>
         <boxGeometry args={[1, 10, 20]} />
+        <meshStandardMaterial wireframe color="green" />
+      </mesh>
+
+      <mesh position={[-14, 6, -13]}>
+        <boxGeometry args={[20, 10, 1]} />
+        <meshStandardMaterial wireframe color="green" />
+      </mesh>
+
+      <mesh position={[9, 6, -13]}>
+        <boxGeometry args={[20, 10, 1]} />
+        <meshStandardMaterial wireframe color="green" />
+      </mesh>
+
+      <mesh position={[0, 6, -27]}>
+        <boxGeometry args={[20, 10, 1]} />
+        <meshStandardMaterial wireframe color="green" />
+      </mesh>
+
+      <mesh position={[-6, 6, -20]}>
+        <boxGeometry args={[1, 10, 12]} />
+        <meshStandardMaterial wireframe color="green" />
+      </mesh>
+
+      <mesh position={[8, 6, -20]}>
+        <boxGeometry args={[1, 10, 12]} />
         <meshStandardMaterial wireframe color="green" />
       </mesh>
     </>
