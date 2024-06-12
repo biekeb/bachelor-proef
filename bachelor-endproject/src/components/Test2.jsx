@@ -6,6 +6,7 @@ import {
   Html,
   CameraControls,
   SpotLight,
+  Billboard,
 } from "@react-three/drei";
 import { easing, geometry } from "maath";
 import { useDragConstraint } from "../helpers/Drag";
@@ -92,21 +93,17 @@ function Model({ showPopup, ...props }) {
     "./assets/deadon/deadon-transformed.glb"
   );
   return (
-    <group ref={group} scale={[2, 2, 2]} {...props} dispose={null}>
-      <Annotation
-        position={[-1.5, 0.1, -2]}
-        clueName="clue1"
-        showPopup={showPopup}
-      >
-        1
-      </Annotation>
-      <Annotation
-        position={[1, 0.1, -4]}
-        clueName="clue2"
-        showPopup={showPopup}
-      >
-        2
-      </Annotation>
+    <group ref={group} scale={[1.7, 1.7, 1.7]} {...props} dispose={null}>
+      <Billboard position={[-1.5, 0.3, -2]}>
+        <Annotation clueName="clue1" showPopup={showPopup}>
+          1
+        </Annotation>
+      </Billboard>
+      <Billboard position={[1, 0.3, -4]}>
+        <Annotation clueName="clue2" showPopup={showPopup}>
+          2
+        </Annotation>
+      </Billboard>
     </group>
   );
 }

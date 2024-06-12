@@ -76,22 +76,22 @@ const TrashCanTrigger = (props) => {
     <>
       <mesh ref={ref} onClick={handleClickNoGun}>
         <boxGeometry args={[6, 6, 6]} />
-        <meshStandardMaterial color="grey" />
+        <meshStandardMaterial wireframe color="grey" />
       </mesh>
 
       <mesh ref={ref2} onClick={handleClickGun}>
         <boxGeometry args={[5, 5, 5]} />
-        <meshStandardMaterial color="grey" />
+        <meshStandardMaterial wireframe color="grey" />
       </mesh>
 
       <mesh ref={ref3} onClick={handleClickNoGun}>
         <boxGeometry args={[5, 5, 5]} />
-        <meshStandardMaterial color="grey" />
+        <meshStandardMaterial wireframe color="grey" />
       </mesh>
 
       <mesh ref={ref4} onClick={handleClickNoGun}>
         <boxGeometry args={[5, 5, 5]} />
-        <meshStandardMaterial color="grey" />
+        <meshStandardMaterial wireframe color="grey" />
       </mesh>
     </>
   );

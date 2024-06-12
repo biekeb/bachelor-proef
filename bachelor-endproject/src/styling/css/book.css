@@ -76,8 +76,15 @@
     list-style-type: none;
   }
 
+  .character-image{
+    width: 200px;
+    height: 200px;
+  }
 
 
+
+
+  /*tutorial screen*/
 
   .tutorialscreen-div img{
     height: 100vh;

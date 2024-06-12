@@ -53,94 +53,99 @@ canvas {
   animation: fade-in 2s ease 0s forwards;
 }
 
-/* .annotation {
-  transition: all 0.5s ease-in-out;
-  box-shadow: inset 0 0 0 0.09px white;
+.annotation {
   cursor: pointer;
-  outline: none;
-  border: none;
-  font-size: 2px;
-  font-weight: 300;
-  background: rgb(255, 0, 0);
-  color: white;
-  padding: 2px 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
+  background-color: #46191969;
+  color: rgba(255, 255, 255, 0.542);
+  border: #e5dccd7c 1pt solid;
+  box-shadow: inset 0 -5px 10px  #0c0c0c;
+  box-shadow: inset 0 5px 10px  #0c0c0c;  
+  border-radius: 5px;
+
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
 }
 
 .annotation:hover {
-  box-shadow: inset 250px 0 0 0 white;
-  color: black;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.loader {
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 900;
-}
-
-.header {
-  pointer-events: none;
+.popup-back-button{
   position: absolute;
-  top: 6em;
+  top: 20px;
+  left: 20px;
+  background-color: #461919;
+    color: white;
+    padding: 16px 20px;
+    border: #e5dccd 1pt solid;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 20px;
+    box-shadow: inset 0 -5px 10px  #0c0c0c;
+    box-shadow: inset 0 5px 10px  #0c0c0c;  
+    transition: 0.3s; ;
+}
+
+.popup-back-button:hover{
+  background-color: #3b3129;
+  transition: 0.3s; ;
+}
+
+.deadon-canvas{
+  position: absolute;
+  top: 0;
   left: 0;
-  color: white;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 900;
-  font-size: 0.8em;
   width: 100%;
-  text-align: center;
+  height: 100%;
+
 }
 
-.header > span {
-  padding: 0 3.25em;
-  letter-spacing: 0.4em;
-  position: relative;
-}
 
-.header > span.active::after {
-  content: "";
+.popup-container {
   position: absolute;
-  bottom: -10px;
-  left: calc(50% - 4px);
-  transform: translate3d(-50%, 0, 0);
-  width: 20px;
-  height: 2px;
-  background: indianred;
-}
-
-.middle {
-  pointer-events: none;
-  position: absolute;
-  bottom: 2.5em;
+  top: 50%;
   left: 50%;
-  transform: translate3d(-50%, 0, 0);
-  font-size: 2em;
-  letter-spacing: 0.5em;
+  transform: translate(-50%, -50%);
+  background-color: #46191964;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  z-index: 1000;
+  width: 300px;
   text-align: center;
-  width: 100%;
+  color: white;
+  box-shadow: inset 0 -5px 10px  #0c0c0c;
+  box-shadow: inset 0 5px 10px  #0c0c0c;  
+
 }
 
-.middle > h1 {
-  line-height: 0.9em;
-  font-weight: 100;
+.popup-content {
+  margin-bottom: 20px;
 }
 
-.middle > h1::after {
-  content: "";
+.popup-close-button {
+  background-color: #461919;
+    color: white;
+    padding: 16px 20px;
+    border: #e5dccd 1pt solid;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 10px;
+    box-shadow: inset 0 -5px 10px  #0c0c0c;
+    box-shadow: inset 0 5px 10px  #0c0c0c;  
+    transition: 0.3s; ;
+  
+}
+
+.popup-close-button:hover {
+  background-color: #3b3129;
+  transition: 0.3s; ;
+}
+
+.deadon-canvas{
   position: absolute;
-  bottom: 10px;
-  left: calc(50% - 25px);
-  width: 50px;
-  height: 2px;
-  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
-
-.middle > h2 {
-  font-size: 1em;
-  line-height: 0px;
-  font-weight: 100;
-  letter-spacing: 0.25em;
-  font-style: italic;
-} */

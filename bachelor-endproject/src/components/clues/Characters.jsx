@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import CharacterManager from "./CharacterManager";
 import isabelImage from "../../styling/images/unknown character.png";
-import vincentImage from "../../styling/images/isa.png";
-import anthonImage from "../../styling/images/isa.png";
+import vincentImage from "../../styling/images/mug.png";
+import anthonImage from "../../styling/images/mug.png";
 
 const Characters = () => {
   const [characters, setCharacters] = useState({});
@@ -35,6 +35,7 @@ const Characters = () => {
                   </h3>
                   <p>{characterData.description}</p>
                   <img
+                    className="character-image"
                     src={characterImages[characterName]}
                     alt={characterName}
                   />

@@ -11,16 +11,15 @@ import "./styling/css/popup.css";
 import "./styling/css/interview.css";
 import "./styling/css/end.css";
 
-
 import App from "./App.js";
 import ErrorPage from "./error/Error";
 import Homescreen from "./pages/Homescreen.jsx";
 import Inventory from "./components/clues/Book.jsx";
 import Test2 from "./components/Test2.jsx";
 import SceneVincentInterview from "./components/poi/VincentInterview.jsx";
-import { PhoneScreen } from "./pages/PhoneScreen.jsx";
 import EndScene from "./pages/EndScene.jsx";
-import { SceneIsabellaInterview } from "./components/poi/IsabellaInterview.jsx";
+import SceneIsabellaInterview from "./components/poi/IsabellaInterview.jsx";
+import SceneAnthonyInterview from "./components/poi/AnthonyInterview.jsx";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +51,11 @@ const router = createBrowserRouter([
   {
     path: "/isabella",
     element: <SceneIsabellaInterview />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/anthony",
+    element: <SceneAnthonyInterview />,
     errorElement: <ErrorPage />,
   },
   {

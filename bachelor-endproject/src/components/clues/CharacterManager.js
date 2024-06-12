@@ -1,3 +1,5 @@
+import vincentimg from '../../styling/images/mug.png';
+
 const CharacterManager = {
     // Define initial characters
     characters: {
@@ -9,7 +11,7 @@ const CharacterManager = {
       vincent: {
         found: false,
         description: "Vincent's description.",
-        image: "path_to_vincent_image.jpg",
+        image: vincentimg,
       },
       anthon: {
         found: false,
