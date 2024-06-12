@@ -1,140 +1,183 @@
-/* Inventory.css */
-/*import local font*/
-@font-face {
-  font-family: "noir";
+  /* Inventory.css */
+  /*import local font*/
+  @font-face {
+    font-family: "noir";
 
-  src: url("../fonts/FilmNoir.ttf") format("ttf");
-}
-
-.inventory {
-    position: relative;
-   font-family: 'noir';
-    color: rgb(45, 45, 45);
+    src: url("../fonts/FilmNoir.ttf") format("ttf");
   }
 
-  .inventory h2{
-    font-family: 'noir' ; 
-    color: white;
+  .inventory {
+      position: relative;
+    font-family: 'noir';
+      color: rgb(45, 45, 45);
+    }
 
-  }  
-  /*picture of the book*/
-  .inventory-book {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    z-index: -1;
-  }
-  
+    .inventory h2{
+      font-family: 'noir' ; 
+      color: white;
 
-  .bookmark-buttons {
-    margin: 20px 0;
-  }
-  
-  .bookmark {
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  .bookmark:hover {
-    background-color: #e67e22;
-  }
+    }  
 
 
+    /*picture of the book*/
+    .inventory-book {
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      z-index: -1;
+    }
+
+    /*bookmarks*/
+
+    .bookmark-buttons{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+
+    }
+
+    .bookmark-clues{
+      position: absolute;
+      background-color: #2b2119;
+      color: white;
+      padding: 16px 20px;
+      border: #e5dccd 1pt solid;
+      cursor: pointer;
+      font-size: 20px;
+      box-shadow: inset 0 -5px 10px  #0c0c0c;
+      box-shadow: inset 0 5px 10px  #0c0c0c;
+      left: 85%;
+      top: 30%;
+    }
+
+    .bookmark-characters{
+      position: absolute;
+      background-color: #2b2119;
+      color: white;
+      padding: 16px 20px;
+      border: #e5dccd 1pt solid;
+      cursor: pointer;
+      font-size: 20px;
+      box-shadow: inset 0 -5px 10px  #0c0c0c;
+      box-shadow: inset 0 5px 10px  #0c0c0c;
+      left: 85%;
+      top: 40%;
+    }
 
 
-  /*clues*/
-  .inventory-clues ul{
-    border: #e67e22 1pt solid;
-    margin: 0% 15%;
-    list-style-type: none;
 
-  }
+    /*clues*/
+    .inventory-clues ul{
+      list-style-type: none;
+    }
 
-
-  
-
-  /*character*/
-  .characters {
+    .inventory-clues {
+      display: flex;
+      justify-content: space-between;
+      margin: 0% 18%;
+      padding-top: 8%;
+    }
     
-    border: 1pt solid blue;
-    margin: 0% 17%;
+    .clues-column {
+      width: 48%;
+    }
+    
+    .clues-column ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .clues-column li {
+      margin-bottom: 1em;
+    }
+    
+
+    #clue-pics{
+      width: 200px;
+      height: 100%;
+    }
+
+    
+
+    /*character*/
+    .characters {
+      /* border : 1px solid red; */
+      margin: 0% 17%;
+      padding-top: 8%;
+
+    }
+
+    .character-div{
+      /* border : 1px solid blue; */
+
+      display: flex;
+      margin-right: 50%;
+      flex-direction: column;
+    }
+    .characters ul{
+      list-style-type: none;
+    }
+
+    .characters img{
+      /* border: 1pt solid brown; */
+      list-style-type: none;
+    }
+
+    .character-image{
+      width: 200px;
+      height: 200px;
+    }
+
+
+
+
+    /*tutorial screen*/
+
+    .tutorialscreen-div img{
+      height: 100vh;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .tut img{
+      position: relative;
+      z-index: 999 !important;
+    }
+    .tut button{
+      position: absolute;
+      z-index: 1000 !important;
+    }
+
+  #prev-btn {
+    background-color: #2b2119;
+    color: white;
+    padding: 16px 20px;
+    border: #e5dccd 1pt solid;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: inset 0 -5px 10px  #0c0c0c;
+    box-shadow: inset 0 5px 10px  #0c0c0c;
+    left: 5%;
+    top: 50%;
   }
-  .character-div{
-    border: 1pt solid black;
-    display: flex;
-    margin-right: 50%;
-    flex-direction: column;
-  }
-  .characters ul{
-    border: 1pt solid red;
-    list-style-type: none;
-  }
 
-  .character-image{
-    width: 200px;
-    height: 200px;
+  #next-btn{
+    background-color: #2b2119;
+    color: white;
+    padding: 16px 20px;
+    border: #e5dccd 1pt solid;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: inset 0 -5px 10px  #0c0c0c;
+    box-shadow: inset 0 5px 10px  #0c0c0c;
+    left: 85%;
+    top: 50%;
   }
 
-
-
-
-  /*tutorial screen*/
-
-  .tutorialscreen-div img{
-    height: 100vh;
+  .tut-btn{
+    border: 1pt blue solid;
     width: 100%;
-    z-index: -1;
-  }
-
-  .tut img{
-    position: relative;
-    z-index: 999 !important;
-  }
-  .tut button{
+    height: 10vh;
     position: absolute;
-    z-index: 1000 !important;
+
   }
-
-#prev-btn {
-  background-color: #2b2119;
-  color: white;
-  padding: 16px 20px;
-  border: #e5dccd 1pt solid;
-  cursor: pointer;
-  font-size: 20px;
-  box-shadow: inset 0 -5px 10px  #0c0c0c;
-  box-shadow: inset 0 5px 10px  #0c0c0c;
-  left: 5%;
-  top: 50%;
-}
-
-#next-btn{
-  background-color: #2b2119;
-  color: white;
-  padding: 16px 20px;
-  border: #e5dccd 1pt solid;
-  cursor: pointer;
-  font-size: 20px;
-  box-shadow: inset 0 -5px 10px  #0c0c0c;
-  box-shadow: inset 0 5px 10px  #0c0c0c;
-  left: 85%;
-  top: 50%;
-}
-
-.tut{
-  border: 1pt red solid;
-}
-
-.tut-btn{
-  border: 1pt blue solid;
-  width: 100%;
-  height: 10vh;
-  position: absolute;
-
-}

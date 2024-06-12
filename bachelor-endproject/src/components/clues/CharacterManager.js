@@ -6,7 +6,7 @@ const CharacterManager = {
       isabel: {
         found: false,
         description: "Isabel's description.",
-        image: "path_to_isabel_image.jpg",
+        image: vincentimg,
       },
       vincent: {
         found: false,
@@ -16,7 +16,7 @@ const CharacterManager = {
       anthon: {
         found: false,
         description: "Anthon's description.",
-        image: "path_to_anthon_image.jpg",
+        image: vincentimg,
       },
       // Add more characters as needed
     },

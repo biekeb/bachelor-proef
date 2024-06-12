@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ClueManager from "../clues/clueManager";
-import CharacterManager from "./CharacterManager";
 import Characters from "./Characters";
-import book from "../../styling/images/book.jpg";
+import book from "../../styling/images/journal.png";
 
 const Inventory = () => {
   const [fetchedClues, setFetchedClues] = useState({});
@@ -21,16 +20,24 @@ const Inventory = () => {
     )
   );
 
+  // Split clues into two parts
+  const clueEntries = Object.entries(foundClues);
+  const half = Math.ceil(clueEntries.length / 2);
+  const firstHalfClues = clueEntries.slice(0, half);
+  const secondHalfClues = clueEntries.slice(half);
+
   return (
     <div className="inventory">
       <img src={book} alt="Book" className="inventory-book" />
-      <h2>Inventory</h2>
       <div className="bookmark-buttons">
-        <button className="bookmark" onClick={() => setCurrentPage("clues")}>
+        <button
+          className="bookmark-clues"
+          onClick={() => setCurrentPage("clues")}
+        >
           Clues
         </button>
         <button
-          className="bookmark"
+          className="bookmark-characters"
           onClick={() => setCurrentPage("characters")}
         >
           Characters
@@ -38,15 +45,34 @@ const Inventory = () => {
       </div>
       {currentPage === "clues" && (
         <div className="inventory-clues">
-          <h2>Book of Clues</h2>
-          <ul>
-            {Object.entries(foundClues).map(([clueName, clueData]) => (
-              <li key={clueName}>
-                <p>{clueData.description}</p>
-                <img src={clueData.imageUrl} alt={`Clue ${clueName}`} />
-              </li>
-            ))}
-          </ul>
+          <div className="clues-column">
+            <ul>
+              {firstHalfClues.map(([clueName, clueData]) => (
+                <li key={clueName}>
+                  <p>{clueData.description}</p>
+                  {clueData.imageUrl && (
+                    <img src={clueData.imageUrl} alt={`Clue ${clueName}`} />
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="clues-column">
+            <ul>
+              {secondHalfClues.map(([clueName, clueData]) => (
+                <li key={clueName}>
+                  <p>{clueData.description}</p>
+                  {clueData.imageUrl && (
+                    <img
+                      id="clue-pics"
+                      src={clueData.imageUrl}
+                      alt={`Clue ${clueName}`}
+                    />
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
       {currentPage === "characters" && <Characters />}

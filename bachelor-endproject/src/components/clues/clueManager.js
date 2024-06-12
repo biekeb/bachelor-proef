@@ -1,29 +1,33 @@
+import bullets from "../../styling/images/bullets.png";
+import cluerevolver from "../../styling/images/cluerevolver.png";
+import letter from "../../styling/images/letter.png";
+
+
 const ClueManager = {
     // Define initial clues
     clues: {
       clue1: {
-        found: true,
+        found: false,
         description: "The bullets found on the ground are .45 callbiers ACP",
+        imageUrl: bullets,
       },
       
       clue2: {
-        found: true,
+        found: false,
         description: "The lifeless body of Don Salvatore",
+        imageUrl: null,
       },
+      
         clue3: {
-            found: true,
-            description: "The blood on the floor is still fresh",
+          found: false,
+          description: "Gun found on the floor",
+          imageUrl: cluerevolver,
         },
         clue4: {
-            found: true,
+            found: false,
             description: "Letter found on the table",
-        },
-        clue4: {
-            found: true,
-            description: "Gun found on the floor",
-        }, 
-      
-      
+            imageUrl: letter,
+        },      
   
       // Add more clues as needed
     },

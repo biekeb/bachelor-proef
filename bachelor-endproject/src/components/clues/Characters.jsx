@@ -22,7 +22,6 @@ const Characters = () => {
 
   return (
     <div className="characters">
-      <h2>Characters</h2>
       <div className="character-div">
         <ul>
           {Object.entries(characters).map(([characterName, characterData]) => (
