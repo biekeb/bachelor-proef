@@ -7,9 +7,16 @@ import videoIsabella from "../styling/images/IsabellaEnd.mp4";
 const EndScene = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const navigate = useNavigate();
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
 
   const handleButtonClick = (video) => {
     setSelectedVideo(video);
+    stopMusic();
+  };
+
+  const stopMusic = () => {
+    setIsMusicPlaying(false);
+    sessionStorage.setItem("isMusicPlaying", "false"); // Save music state to localStorage
   };
 
   const handleVideoEnd = () => {
@@ -31,15 +38,31 @@ const EndScene = () => {
         </div>
       ) : (
         <div className="button-container">
-          <h1>Choose an Ending</h1>
-          <button onClick={() => handleButtonClick(videoVincent)}>
-            Ending 1
+          <h1>Acuse who will be brought to justice</h1>
+
+          <h2>choice 1</h2>
+          <button
+            className="end-btn"
+            onClick={() => handleButtonClick(videoVincent)}
+          >
+            Acuse Vincent
           </button>
-          <button onClick={() => handleButtonClick(videoAnthony)}>
-            Ending 2
+
+          <h2>choice 2</h2>
+          <button
+            className="end-btn"
+            onClick={() => handleButtonClick(videoAnthony)}
+          >
+            Acuse Anthony
           </button>
-          <button onClick={() => handleButtonClick(videoIsabella)}>
-            Ending 3
+
+          <h2>choice 3</h2>
+
+          <button
+            className="end-btn"
+            onClick={() => handleButtonClick(videoIsabella)}
+          >
+            Acuse Isabella
           </button>
         </div>
       )}
