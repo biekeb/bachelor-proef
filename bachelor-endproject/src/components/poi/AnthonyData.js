@@ -73,15 +73,14 @@ const data = {
                     },
                     "Did you benefit from his death?": {
                       question: "No, if anything, it complicates matters for everyone.",
-                      impactLevel: 10,
                       responses: {
                         "How so?": {
                           question: "Power struggles, territory shifts, potential for more violence.",
-                          impactLevel: 10,
+                          impactLevel: 2,
                         },
                         "Anyone in your gang feel differently?": {
                           question: "Some might see it as an opportunity, but it's risky business.",
-                          impactLevel: 10,
+                          impactLevel: 3,
                         },
                       },
                     },
@@ -93,11 +92,11 @@ const data = {
                   responses: {
                     "Can you describe the nature of these conflicts?": {
                       question: "Territory disputes, business disagreements, the usual.",
-                      impactLevel: 5,
+                      impactLevel: 1,
                       responses: {
                         "Any threats exchanged?": {
                           question: "Threats were common, but they were just part of the posturing.",
-                          impactLevel: 5,
+                          impactLevel: 1,
                         },
                         "Did you ever feel threatened?": {
                           question: "It was part of the game. We all knew the risks.",
@@ -185,37 +184,37 @@ const data = {
           responses: {
             "Did you know the victim well?": {
               question: "Yes, he was the boss of the rival gang.",
-              impactLevel: 10,
+              impactLevel: 3,
               responses: {
                 "But you knew he was in the rival gang?": {
                   question: "Everyone knew that. He was kind of notorious.",
-                  impactLevel: 10,
+                  impactLevel: 3,
                   responses: {
                     "What made him notorious?": {
                       question: "His ruthlessness and the way he handled his business.",
-                      impactLevel: 10,
+                      impactLevel: 3,
                       responses: {
                         "Any particular incidents?": {
                           question: "Too many to count, he had a reputation for being ruthless.",
-                          impactLevel: 10,
+                          impactLevel: 3,
                         },
                         "How did he handle his business?": {
                           question: "With an iron fist. He didn't tolerate dissent.",
-                          impactLevel: 10,
+                          impactLevel: 3,
                         },
                       },
                     },
                     "How did people in your gang view him?": {
                       question: "As a dangerous rival, someone to be cautious around.",
-                      impactLevel: 10,
+                      impactLevel: 3,
                       responses: {
                         "Any respect for him?": {
                           question: "Some respected his power, others feared it.",
-                          impactLevel: 10,
+                          impactLevel: 5,
                         },
                         "Did anyone admire him?": {
                           question: "A few did, but most kept their distance.",
-                          impactLevel: 10,
+                          impactLevel: 6,
                         },
                       },
                     },
@@ -223,25 +222,25 @@ const data = {
                 },
                 "Ever had any run-ins with him?": {
                   question: "A couple of times, but nothing major.",
-                  impactLevel: 10,
+                  impactLevel: 5,
                   responses: {
                     "What were those run-ins about?": {
                       question: "Mostly territorial disputes and business disagreements.",
-                      impactLevel: 10,
+                      impactLevel: 5,
                       responses: {
                         "Did they get violent?": {
                           question: "Sometimes, but it was usually just threats and posturing.",
-                          impactLevel: 10,
+                          impactLevel: 5,
                         },
                         "Any memorable incidents?": {
                           question: "One time, things almost got out of hand, but we managed to de-escalate.",
-                          impactLevel: 10,
+                          impactLevel: 5,
                         },
                       },
                     },
                     "How did he treat you personally?": {
                       question: "He was cold and calculating, never personal, always business.",
-                      impactLevel: 10,
+                      impactLevel: 5,
                     },
                   },
                 },
