@@ -61,7 +61,7 @@ const Inventory = () => {
                 <ul>
                   {firstHalfClues.map(([clueName, clueData]) => (
                     <li key={clueName}>
-                      <p>{clueData.description}</p>
+                      <p id="character-font">{clueData.description}</p>
                       {clueData.imageUrl && (
                         <img src={clueData.imageUrl} alt={`Clue ${clueName}`} />
                       )}
@@ -70,11 +70,10 @@ const Inventory = () => {
                 </ul>
               </div>
               <div className="clues-column">
-                <h2 id="character-font">clues</h2>
                 <ul>
                   {secondHalfClues.map(([clueName, clueData]) => (
                     <li key={clueName}>
-                      <p>{clueData.description}</p>
+                      <p id="character-font">{clueData.description}</p>
                       {clueData.imageUrl && (
                         <img
                           id="clue-pics"

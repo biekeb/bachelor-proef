@@ -76,6 +76,10 @@ const EndScene = () => {
 
   return (
     <>
+      <button className="end-btn">
+        <a href="/app">Back to bar</a>
+      </button>
+
       {isCanvasVisible && (
         <Canvas
           style={{ zIndex: "-1" }}

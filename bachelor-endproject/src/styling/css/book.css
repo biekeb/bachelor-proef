@@ -38,7 +38,7 @@
 
     .bookmark-clues{
       position: absolute;
-      background-color: #2b2119;
+      background-color: #461919;
       color: white;
       padding: 16px 20px;
       border: #e5dccd 1pt solid;
@@ -52,7 +52,7 @@
 
     .bookmark-characters{
       position: absolute;
-      background-color: #2b2119;
+      background-color: #461919;
       color: white;
       padding: 16px 20px;
       border: #e5dccd 1pt solid;
@@ -66,7 +66,7 @@
 
     .bookmark-journal{
       position: absolute;
-      background-color: #2b2119;
+      background-color: #461919;
       color: white;
       padding: 16px 20px;
       border: #e5dccd 1pt solid;
@@ -195,7 +195,7 @@
     }
 
   #prev-btn {
-    background-color: #2b2119;
+    background-color: #461919;
     color: white;
     padding: 16px 20px;
     border: #e5dccd 1pt solid;
@@ -208,7 +208,7 @@
   }
 
   #next-btn{
-    background-color: #2b2119;
+    background-color: #461919;
     color: white;
     padding: 16px 20px;
     border: #e5dccd 1pt solid;
