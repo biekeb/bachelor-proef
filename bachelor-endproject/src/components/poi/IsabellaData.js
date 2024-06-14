@@ -44,34 +44,7 @@ const data = {
       question: "That's quite inappropriate.",
       impactLevel: -20, // inappropriate, negative impact
       responses: {
-        "Can you explain the note from Vincent that we found in your possession?": {
-          question: "What about it?",
-          impactLevel: 0, // neutral impact
-          responses: {
-            "Did you and Don have a troubled relationship?": {
-              question: "No, I loved him.",
-              impactLevel: 2, // low relevance, slight positive impact
-            },
-            "What is your relationship with Vincent?": {
-              question: "We had a relationship in the past, but we've had little contact recently.",
-              impactLevel: 2, // low relevance, slight positive impact
-              responses: {
-                "Why did Vincent write you the letter?": {
-                  question: "Vincent wrote the letter to express remorse and regret about our past relationship.",
-                  impactLevel: 2, // low relevance, slight positive impact
-                },
-                "How did Vincent learn about your altercation with Don?": {
-                  question: "I'm not sure, but he might have heard about it from someone.",
-                  impactLevel: 2, // low relevance, slight positive impact
-                },
-                "Has Vincent ever shown interest in rekindling your relationship?": {
-                  question: "No, he hasn't indicated any such interest.",
-                  impactLevel: 2, // low relevance, slight positive impact
-                },
-              },
-            },
-          },
-        },
+
         "Did you have any interactions with the victim?": {
           question: "Yes, I did.",
           impactLevel: 8, // relevant, positive impact

@@ -13,26 +13,145 @@ import questionmark from "../../styling/images/Questionmark.png";
 import Isabella from "./Isabella";
 
 const specialQuestionNode = {
-  question:
-    "",
+  question: "",
   responses: {
     "Did you and Don have a troubled relationship?": {
-      question: "No, I loved him.",
-    },
-    "What is your relationship with Vincent?": {
-      question:
-        "We had a relationship in the past, but we've had little contact recently.",
+      question: "Yes, Don was abusive towards me.",
       responses: {
-        "Why did Vincent write you the letter?": {
-          question:
-            "Vincent wrote the letter to express remorse and regret about our past relationship.",
+        "How long was Don abusive towards you?": {
+          question: "It started a few years ago, and it got worse over time.",
+          responses: {
+            "Did you ever consider leaving him?": {
+              question: "Yes, but I was scared of what he might do.",
+            },
+            "Did you ever report the abuse to the authorities?": {
+              question: "No, I was too afraid and ashamed to report it.",
+            },
+          },
         },
-        "How did Vincent learn about your altercation with Don?": {
+        "Did anyone else know about the abuse?": {
           question:
-            "I'm not sure, but he might have heard about it from someone.",
-        },
-        "Has Vincent ever shown interest in rekindling your relationship?": {
-          question: "No, he hasn't indicated any such interest.",
+            "I confided in a few close friends, but not many people knew.",
+          responses: {
+            "Who did you confide in?": {
+              question: "My close friend Sarah and my sister.",
+            },
+            "Did Vincent know about the abuse?": {
+              question: "Yes, he was one of the few people I told.",
+              responses: {
+                "How did Vincent react when you told him?": {
+                  question:
+                    "He was supportive and tried to help me as much as he could.",
+                  responses: {
+                    "What is your relationship with Vincent?": {
+                      question:
+                        "Vincent and I have been having a secret affair.",
+                      responses: {
+                        "How long has the affair been going on?": {
+                          question:
+                            "We've been seeing each other for about a year.",
+                          responses: {
+                            "How did the affair start?": {
+                              question:
+                                "We grew close when I confided in him about Don's abuse.",
+                            },
+                            "Were you in love with Vincent?": {
+                              question:
+                                "Yes, we developed strong feelings for each other.",
+                            },
+                          },
+                        },
+                        "Why did you keep the affair a secret?": {
+                          question:
+                            "I was afraid of what Don might do if he found out.",
+                          responses: {
+                            "Did you plan to leave Don for Vincent?": {
+                              question:
+                                "We talked about it, but I was too scared to take that step.",
+                            },
+                            "Did Vincent ever pressure you to leave Don?": {
+                              question:
+                                "No, he understood my situation and was patient.",
+                            },
+                          },
+                        },
+                        "Did Don know about the affair?": {
+                          question:
+                            "I think he suspected something, but I don't know for sure.",
+                          responses: {
+                            "Did Don ever confront you about it?": {
+                              question:
+                                "He made some comments, but he never directly confronted me.",
+                            },
+                            "How did Don's behavior change after he suspected the affair?":
+                              {
+                                question:
+                                  "He became even more controlling and abusive.",
+                              },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+                "Did Vincent ever confront Don about the abuse?": {
+                  question:
+                    "Not directly, but he did warn Don to treat me better.",
+                  responses: {
+                    "What is your relationship with Vincent?": {
+                      question:
+                        "Vincent and I have been having a secret affair.",
+                      responses: {
+                        "How long has the affair been going on?": {
+                          question:
+                            "We've been seeing each other for about a year.",
+                          responses: {
+                            "How did the affair start?": {
+                              question:
+                                "We grew close when I confided in him about Don's abuse.",
+                            },
+                            "Were you in love with Vincent?": {
+                              question:
+                                "Yes, we developed strong feelings for each other.",
+                            },
+                          },
+                        },
+                        "Why did you keep the affair a secret?": {
+                          question:
+                            "I was afraid of what Don might do if he found out.",
+                          responses: {
+                            "Did you plan to leave Don for Vincent?": {
+                              question:
+                                "We talked about it, but I was too scared to take that step.",
+                            },
+                            "Did Vincent ever pressure you to leave Don?": {
+                              question:
+                                "No, he understood my situation and was patient.",
+                            },
+                          },
+                        },
+                        "Did Don know about the affair?": {
+                          question:
+                            "I think he suspected something, but I don't know for sure.",
+                          responses: {
+                            "Did Don ever confront you about it?": {
+                              question:
+                                "He made some comments, but he never directly confronted me.",
+                            },
+                            "How did Don's behavior change after he suspected the affair?":
+                              {
+                                question:
+                                  "He became even more controlling and abusive.",
+                              },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
         },
       },
     },
@@ -53,7 +172,7 @@ export default function SceneIsabellaInterview() {
       const newDetectiveMeter = detectiveMeter + impactLevel;
       setDetectiveMeter(newDetectiveMeter);
 
-      if (newDetectiveMeter > 60 && !specialQuestionAsked) {
+      if (newDetectiveMeter > 70 && !specialQuestionAsked) {
         setSpecialQuestionAsked(true);
         setCurrentNode(specialQuestionNode);
       } else {
@@ -146,7 +265,7 @@ function QuestionNode({ node, onResponse }) {
         </ul>
       </div>
       <div className="node-answer">
-        <h2>Isabella's answer:</h2>
+        <h2 id="h2-kk">Isabella's answer:</h2>
         <p>{node.question}</p>
       </div>
     </div>

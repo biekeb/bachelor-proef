@@ -29,6 +29,7 @@ import music from "../src/styling/sounds/menu.mp3";
 import leter from "../src/styling/images/letter.png";
 import IsabellaInBar from "./components/poi/IsabellaInBar";
 import AnthonyInBar from "./components/poi/AnthonyInBar";
+import ClueManager from "./components/clues/clueManager";
 
 export default function App() {
   const [loader, setLoader] = useState(true);
@@ -78,6 +79,12 @@ export default function App() {
     setIsMusicPlaying(false);
     sessionStorage.setItem("isMusicPlaying", "false"); // Save music state to localStorage
   };
+
+  const handleLetterClick = () => {
+    setShowLetter(true);
+    ClueManager.updateClueStatus("clue4"); // Update clue4 status to true
+  };
+
 
   return (
     <>
@@ -140,7 +147,7 @@ export default function App() {
               <IsabellaInBar />
               <Phonebooth  />
               <TrashcanTrigger />
-              <Letter onClick={() => setShowLetter(true)} /> {/* Pass callback here */}
+              <Letter onClick={handleLetterClick} /> {/* Use handler here */}
             </Physics>
             <PointerLockControls />
           </Canvas>

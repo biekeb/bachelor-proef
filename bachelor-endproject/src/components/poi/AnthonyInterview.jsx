@@ -239,7 +239,7 @@ function QuestionNode({ node, onResponse }) {
         </ul>
       </div>
       <div className="node-answer">
-        <h2>Anthony's answer:</h2>
+        <h2 id="h2-kk">Anthony's answer:</h2>
         <p>{node.question}</p>
       </div>
     </div>

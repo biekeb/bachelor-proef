@@ -220,7 +220,10 @@ body {
     top: 100%;
   }
 }
-
+#h2-kk{
+  font-family: sans-serif;
+  font-size: 1em;
+}
 .homescreen {
   /* background-image: url(../styling/images/hsbackground.jpg); */
   background-size: cover;

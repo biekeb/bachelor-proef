@@ -1,38 +1,30 @@
-const bartenderInterrogation = {
+const data = {
   question: "",
   responses: {
-
     "Do you recall seeing anyone leaving the bar around the time of the murder?": {
       question: "I didn't notice anyone leaving in a hurry or acting suspiciously.",
+      impactLevel: 10,
       responses: {
         "Did you see anyone enter the bar shortly before or after the murder?": {
           question: "No, it was pretty crowded, so it's hard to remember everyone who came in.",
+          impactLevel: 5,
           responses: {
-            "Can you describe anyone who seemed out of place or unfamiliar?": {
-              question: "There was a man in a dark coat who looked a bit out of place, but I didn't get a good look at him.",
-              responses: {
-                "Did the man in the dark coat speak to anyone?": {
-                  question: "Not that I noticed. He kept to himself.",
-                },
-                "How long did the man stay in the bar?": {
-                  question: "He was there for about an hour, then left without a word.",
-                },
-                "Did anyone else notice the man?": {
-                  question: "I'm not sure. You might want to ask the regulars.",
-                },
-              },
-            },
+ 
             "Did anyone approach Don Moretti that seemed unusual?": {
               question: "A few people greeted him, but no one stood out as unusual.",
+              impactLevel: 5,
               responses: {
                 "Can you describe these people?": {
                   question: "Mostly regulars. A mix of business associates and friends.",
+                  impactLevel: 2,
                 },
                 "Was there any tension in Don's interactions?": {
                   question: "He seemed a bit on edge, but that's not unusual for him.",
+                  impactLevel: 2,
                 },
                 "Did anyone leave right after speaking with Don?": {
                   question: "No, they all stayed around for a while.",
+                  impactLevel: 2,
                 },
               },
             },
@@ -40,32 +32,41 @@ const bartenderInterrogation = {
         },
         "Were there any disturbances or unusual incidents during your shift?": {
           question: "No, everything was running smoothly until the incident occurred.",
+          impactLevel: -5,
           responses: {
             "Did anyone seem particularly interested in Don Moretti?": {
               question: "A few people were watching him closely, but that’s not unusual for a man of his stature.",
+              impactLevel: 5,
               responses: {
                 "Can you name anyone who was watching him?": {
                   question: "Mostly regulars, but I didn't catch specific names.",
+                  impactLevel: -5,
                 },
                 "Did anyone approach Don multiple times?": {
                   question: "No, just the usual greetings and small talk.",
+                  impactLevel: 5,
                 },
                 "Were there any heated conversations involving Don?": {
                   question: "Not really, he kept to himself mostly.",
+                  impactLevel: 2,
                 },
               },
             },
             "Did Don Moretti behave unusually that night?": {
               question: "He seemed a bit tense, but otherwise normal.",
+              impactLevel: 5,
               responses: {
                 "Did he have any meetings scheduled that night?": {
                   question: "Not that I know of, but he often has impromptu meetings.",
+                  impactLevel: 5,
                 },
                 "Was he drinking more than usual?": {
                   question: "No, he had his usual drink.",
+                  impactLevel: -5,
                 },
                 "Did he interact with the staff differently?": {
                   question: "No, he was his usual self with us.",
+                  impactLevel: -5,
                 },
               },
             },
@@ -87,210 +88,337 @@ const bartenderInterrogation = {
         },
       },
     },
-    "Can you explain the note we found addressed to Isabella Moretti?": {
-      question: "Yes, I wrote that note to Isabella. It was just a friendly message, nothing more.",
+    "How has business been lately?": {
+      question: "It's been up and down. You know how it is in this line of work.",
+      impactLevel: -10,
       responses: {
-        "What prompted you to write the note to Isabella?": {
-          question: "I noticed she seemed a bit down, so I wanted to cheer her up with a kind gesture.",
+        "Any notable customers recently?": {
+          question: "We get all sorts, but no one really stands out.",
+          impactLevel: -5,
           responses: {
-            "Have you written notes to her before?": {
-              question: "No, this was the first time. She usually doesn't need cheering up.",
+            "Did you see anyone enter the bar shortly before or after the murder?": {
+              question: "No, it was pretty crowded, so it's hard to remember everyone who came in.",
+              impactLevel: -5,
               responses: {
-                "Why did you feel she needed cheering up this time?": {
-                  question: "She seemed particularly sad that night, more than usual.",
+                "Can you describe anyone who seemed out of place or unfamiliar?": {
+                  question: "There was a man in a dark coat who looked a bit out of place, but I didn't get a good look at him.",
+                  impactLevel: 10,
+                  responses: {
+                    "Did the man in the dark coat speak to anyone?": {
+                      question: "Not that I noticed. He kept to himself.",
+                      impactLevel: 5,
+                    },
+                    "How long did the man stay in the bar?": {
+                      question: "He was there for about an hour, then left without a word.",
+                      impactLevel: 5,
+                    },
+                    "Did anyone else notice the man?": {
+                      question: "I'm not sure. You might want to ask the regulars.",
+                      impactLevel: -5,
+                    },
+                  },
                 },
-                "Did she talk to you about her troubles?": {
-                  question: "No, she didn't say much, but you could see it in her eyes.",
-                },
-                "Did Don Moretti know about the note?": {
-                  question: "I don't think so, I was discreet about it.",
+                "Did anyone approach Don Moretti that seemed unusual?": {
+                  question: "A few people greeted him, but no one stood out as unusual.",
+                  impactLevel: -5,
+                  responses: {
+                    "Can you describe these people?": {
+                      question: "Mostly regulars. A mix of business associates and friends.",
+                      impactLevel: 5,
+                    },
+                    "Was there any tension in Don's interactions?": {
+                      question: "He seemed a bit on edge, but that's not unusual for him.",
+                      impactLevel: 5,
+                    },
+                    "Did anyone leave right after speaking with Don?": {
+                      question: "No, they all stayed around for a while.",
+                      impactLevel: -5,
+                    },
+                  },
                 },
               },
             },
-            "Did Isabella respond to your note?": {
-              question: "No, she didn’t mention it to me.",
+            "Were there any disturbances or unusual incidents during your shift?": {
+              question: "No, everything was running smoothly until the incident occurred.",
+              impactLevel: -5,
               responses: {
-                "Did you expect her to respond?": {
-                  question: "Not really, it was just a small gesture.",
+                "Did anyone seem particularly interested in Don Moretti?": {
+                  question: "A few people were watching him closely, but that’s not unusual for a man of his stature.",
+                  impactLevel: 5,
+                  responses: {
+                    "Can you name anyone who was watching him?": {
+                      question: "Mostly regulars, but I didn't catch specific names.",
+                      impactLevel: -5,
+                    },
+                    "Did anyone approach Don multiple times?": {
+                      question: "No, just the usual greetings and small talk.",
+                      impactLevel: -5,
+                    },
+                    "Were there any heated conversations involving Don?": {
+                      question: "Not really, he kept to himself mostly.",
+                      impactLevel: -5,
+                    },
+                  },
                 },
-                "Did she seem to react to it in any way?": {
-                  question: "She smiled a bit when she read it, but that’s all.",
+                "Did Don Moretti behave unusually that night?": {
+                  question: "He seemed a bit tense, but otherwise normal.",
+                  impactLevel: 5,
+                  responses: {
+                    "Did he have any meetings scheduled that night?": {
+                      question: "Not that I know of, but he often has impromptu meetings.",
+                      impactLevel: 5,
+                    },
+                    "Was he drinking more than usual?": {
+                      question: "No, he had his usual drink.",
+                      impactLevel: -5,
+                    },
+                    "Did he interact with the staff differently?": {
+                      question: "No, he was his usual self with us.",
+                      impactLevel: -5,
+                    },
+                  },
                 },
-                "Did anyone else see you give her the note?": {
-                  question: "No, I was careful to be discreet.",
-                },
-              },
-            },
-            "Do you think anyone else noticed the note?": {
-              question: "I doubt it, the bar was busy.",
-              responses: {
-                "Was there anyone close by when you gave it to her?": {
-                  question: "Just a few regulars, but they weren’t paying attention.",
-                },
-                "Did Isabella seem worried after receiving the note?": {
-                  question: "No, she seemed more relaxed actually.",
-                },
-                "Do you know if she showed the note to anyone?": {
-                  question: "I don’t think so, she kept it to herself.",
+                "Was there any conflict between customers that night?": {
+                  question: "There were a few minor arguments, but nothing serious.",
+                  impactLevel: -5,
+                  responses: {
+                    "Can you describe the arguments?": {
+                      question: "Just the usual bar disputes, nothing that involved Don.",
+                      impactLevel: -5,
+                    },
+                    "Did any of the arguments involve people close to Don?": {
+                      question: "No, they were mostly between strangers.",
+                      impactLevel: -5,
+                    },
+                    "Were the police called for any of these disputes?": {
+                      question: "No, we handled them in-house.",
+                      impactLevel: -5,
+                    },
+                  },
                 },
               },
             },
           },
         },
-        "Did Isabella seem distressed when she read the note?": {
-          question: "No, she seemed more at ease after reading it.",
+        "How do you manage with all the stress?": {
+          question: "I just take it one day at a time. A good drink at the end of the day helps.",
+          impactLevel: -5,
           responses: {
-            "Did she say anything to you after reading it?": {
-              question: "She just thanked me and went back to her drink.",
+            "Did you see anyone enter the bar shortly before or after the murder?": {
+              question: "No, it was pretty crowded, so it's hard to remember everyone who came in.",
+              impactLevel: -5,
+              responses: {
+                "Can you describe anyone who seemed out of place or unfamiliar?": {
+                  question: "There was a man in a dark coat who looked a bit out of place, but I didn't get a good look at him.",
+                  impactLevel: 10,
+                  responses: {
+                    "Did the man in the dark coat speak to anyone?": {
+                      question: "Not that I noticed. He kept to himself.",
+                      impactLevel: 5,
+                    },
+                    "How long did the man stay in the bar?": {
+                      question: "He was there for about an hour, then left without a word.",
+                      impactLevel: 5,
+                    },
+                    "Did anyone else notice the man?": {
+                      question: "I'm not sure. You might want to ask the regulars.",
+                      impactLevel: -5,
+                    },
+                  },
+                },
+                "Did anyone approach Don Moretti that seemed unusual?": {
+                  question: "A few people greeted him, but no one stood out as unusual.",
+                  impactLevel: -5,
+                  responses: {
+                    "Can you describe these people?": {
+                      question: "Mostly regulars. A mix of business associates and friends.",
+                      impactLevel: 5,
+                    },
+                    "Was there any tension in Don's interactions?": {
+                      question: "He seemed a bit on edge, but that's not unusual for him.",
+                      impactLevel: 5,
+                    },
+                    "Did anyone leave right after speaking with Don?": {
+                      question: "No, they all stayed around for a while.",
+                      impactLevel: -5,
+                    },
+                  },
+                },
+              },
             },
-            "Did anyone else see you giving her the note?": {
-              question: "No, it was a private moment.",
+            "Were there any disturbances or unusual incidents during your shift?": {
+              question: "No, everything was running smoothly until the incident occurred.",
+              impactLevel: -5,
+              responses: {
+                "Did anyone seem particularly interested in Don Moretti?": {
+                  question: "A few people were watching him closely, but that’s not unusual for a man of his stature.",
+                  impactLevel: 5,
+                  responses: {
+                    "Can you name anyone who was watching him?": {
+                      question: "Mostly regulars, but I didn't catch specific names.",
+                      impactLevel: -5,
+                    },
+                    "Did anyone approach Don multiple times?": {
+                      question: "No, just the usual greetings and small talk.",
+                      impactLevel: -5,
+                    },
+                    "Were there any heated conversations involving Don?": {
+                      question: "Not really, he kept to himself mostly.",
+                      impactLevel: -5,
+                    },
+                  },
+                },
+                "Did Don Moretti behave unusually that night?": {
+                  question: "He seemed a bit tense, but otherwise normal.",
+                  impactLevel: 5,
+                  responses: {
+                    "Did he have any meetings scheduled that night?": {
+                      question: "Not that I know of, but he often has impromptu meetings.",
+                      impactLevel: 5,
+                    },
+                    "Was he drinking more than usual?": {
+                      question: "No, he had his usual drink.",
+                      impactLevel: -5,
+                    },
+                    "Did he interact with the staff differently?": {
+                      question: "No, he was his usual self with us.",
+                      impactLevel: -5,
+                    },
+                  },
+                },
+                "Was there any conflict between customers that night?": {
+                  question: "There were a few minor arguments, but nothing serious.",
+                  impactLevel: -5,
+                  responses: {
+                    "Can you describe the arguments?": {
+                      question: "Just the usual bar disputes, nothing that involved Don.",
+                      impactLevel: -5,
+                    },
+                    "Did any of the arguments involve people close to Don?": {
+                      question: "No, they were mostly between strangers.",
+                      impactLevel: -5,
+                    },
+                    "Were the police called for any of these disputes?": {
+                      question: "No, we handled them in-house.",
+                      impactLevel: -5,
+                    },
+                  },
+                },
+              },
             },
-            "Did Don Moretti notice your interaction with Isabella?": {
-              question: "I don't think he did, he was busy with his own matters.",
+          },
+        },
+        "What changes have you seen in the bar over the years?": {
+          question: "The crowd has changed a bit. We get more younger folks now.",
+          impactLevel: -5,
+          responses: {
+            "Did you see anyone enter the bar shortly before or after the murder?": {
+              question: "No, it was pretty crowded, so it's hard to remember everyone who came in.",
+              impactLevel: -5,
+              responses: {
+                "Can you describe anyone who seemed out of place or unfamiliar?": {
+                  question: "There was a man in a dark coat who looked a bit out of place, but I didn't get a good look at him.",
+                  impactLevel: 10,
+                  responses: {
+                    "Did the man in the dark coat speak to anyone?": {
+                      question: "Not that I noticed. He kept to himself.",
+                      impactLevel: 5,
+                    },
+                    "How long did the man stay in the bar?": {
+                      question: "He was there for about an hour, then left without a word.",
+                      impactLevel: 5,
+                    },
+                    "Did anyone else notice the man?": {
+                      question: "I'm not sure. You might want to ask the regulars.",
+                      impactLevel: -5,
+                    },
+                  },
+                },
+                "Did anyone approach Don Moretti that seemed unusual?": {
+                  question: "A few people greeted him, but no one stood out as unusual.",
+                  impactLevel: -5,
+                  responses: {
+                    "Can you describe these people?": {
+                      question: "Mostly regulars. A mix of business associates and friends.",
+                      impactLevel: 5,
+                    },
+                    "Was there any tension in Don's interactions?": {
+                      question: "He seemed a bit on edge, but that's not unusual for him.",
+                      impactLevel: 5,
+                    },
+                    "Did anyone leave right after speaking with Don?": {
+                      question: "No, they all stayed around for a while.",
+                      impactLevel: -5,
+                    },
+                  },
+                },
+              },
+            },
+            "Were there any disturbances or unusual incidents during your shift?": {
+              question: "No, everything was running smoothly until the incident occurred.",
+              impactLevel: -5,
+              responses: {
+                "Did anyone seem particularly interested in Don Moretti?": {
+                  question: "A few people were watching him closely, but that’s not unusual for a man of his stature.",
+                  impactLevel: 5,
+                  responses: {
+                    "Can you name anyone who was watching him?": {
+                      question: "Mostly regulars, but I didn't catch specific names.",
+                      impactLevel: -5,
+                    },
+                    "Did anyone approach Don multiple times?": {
+                      question: "No, just the usual greetings and small talk.",
+                      impactLevel: -5,
+                    },
+                    "Were there any heated conversations involving Don?": {
+                      question: "Not really, he kept to himself mostly.",
+                      impactLevel: -5,
+                    },
+                  },
+                },
+                "Did Don Moretti behave unusually that night?": {
+                  question: "He seemed a bit tense, but otherwise normal.",
+                  impactLevel: 5,
+                  responses: {
+                    "Did he have any meetings scheduled that night?": {
+                      question: "Not that I know of, but he often has impromptu meetings.",
+                      impactLevel: 5,
+                    },
+                    "Was he drinking more than usual?": {
+                      question: "No, he had his usual drink.",
+                      impactLevel: -5,
+                    },
+                    "Did he interact with the staff differently?": {
+                      question: "No, he was his usual self with us.",
+                      impactLevel: -5,
+                    },
+                  },
+                },
+                "Was there any conflict between customers that night?": {
+                  question: "There were a few minor arguments, but nothing serious.",
+                  impactLevel: -5,
+                  responses: {
+                    "Can you describe the arguments?": {
+                      question: "Just the usual bar disputes, nothing that involved Don.",
+                      impactLevel: -5,
+                    },
+                    "Did any of the arguments involve people close to Don?": {
+                      question: "No, they were mostly between strangers.",
+                      impactLevel: -5,
+                    },
+                    "Were the police called for any of these disputes?": {
+                      question: "No, we handled them in-house.",
+                      impactLevel: -5,
+                    },
+                  },
+                },
+              },
             },
           },
         },
       },
     },
-    "What is the nature of your relationship with Isabella Moretti?": {
-      question: "We're acquaintances. She's been a patron at the bar a few times, but we're not close.",
-      responses: {
-        "Have you had any personal interactions with Isabella outside of the bar?": {
-          question: "No, our interactions have been limited to the bar.",
-          responses: {
-            "Has she ever confided in you about her relationship with Don Moretti?": {
-              question: "Not really, she’s kept things mostly to herself.",
-              responses: {
-                "Did she ever hint at having problems with Don?": {
-                  question: "A few times, but she never went into detail.",
-                },
-                "Did she seem afraid of Don?": {
-                  question: "Sometimes, yes. But she hid it well.",
-                },
-                "Did she ever ask for your help or advice?": {
-                  question: "No, she never directly asked for help.",
-                },
-              },
-            },
-            "Did you ever meet Isabella outside the bar?": {
-              question: "No, never. Our relationship is strictly within these walls.",
-              responses: {
-                "Did she ever invite you to meet elsewhere?": {
-                  question: "No, she never suggested anything like that.",
-                },
-                "Did you ever see her outside the bar incidentally?": {
-                  question: "Once or twice, but we never interacted outside.",
-                },
-                "Would you have liked to meet her outside the bar?": {
-                  question: "I don't mix business with personal life.",
-                },
-              },
-            },
-            "Did you notice any changes in her behavior over time?": {
-              question: "She seemed more anxious over the past few weeks.",
-              responses: {
-                "Did she mention any specific reason for her anxiety?": {
-                  question: "No, she kept it to herself.",
-                },
-                "Did Don's behavior towards her change recently?": {
-                  question: "He was more controlling, from what I could see.",
-                },
-                "Did anyone else notice her change in behavior?": {
-                  question: "Some of the regulars did, they mentioned it to me.",
-                },
-              },
-            },
-          },
-        },
-        "Did you have any reason to believe that Isabella was in distress or trouble on the night of the murder?": {
-          question: "No, she appeared to be in good spirits when she was here.",
-          responses: {
-            "Did she interact with Don Moretti that night?": {
-              question: "Briefly, but it seemed cordial.",
-              responses: {
-                "Did their interaction seem different from usual?": {
-                  question: "Not really, it was as brief as always.",
-                },
-                "Did they argue at any point?": {
-                  question: "No, everything seemed calm between them.",
-                },
-                "Did she leave before or after Don Moretti?": {
-                  question: "She left before him, if I recall correctly.",
-                },
-              },
-            },
-            "Did anyone else seem particularly interested in Isabella that night?": {
-              question: "No, she kept a low profile.",
-              responses: {
-                "Did any of Don's associates speak to her?": {
-                  question: "A few, but nothing out of the ordinary.",
-                },
-                "Did she seem nervous or anxious during the evening?": {
-                  question: "Not more than usual.",
-                },
-                "Did she leave alone or with someone?": {
-                  question: "She left alone, as far as I know.",
-                },
-              },
-            },
-            "Did you notice any unusual behavior from her?": {
-              question: "She seemed a bit tense, but otherwise normal.",
-              responses: {
-                "Did she mention any plans for after she left the bar?": {
-                  question: "No, she didn't mention anything.",
-                },
-                "Did she receive any calls or messages while at the bar?": {
-                  question: "Not that I saw.",
-                },
-                "Did she interact with anyone else besides Don?": {
-                  question: "Just a few regulars, but nothing significant.",
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-    "How is business going?": {
-      question: "Bussiness is going well.",
-      responses: {
-        "Have you noticed any changes in customer behavior recently?": {
-          question: "Not really, most people come here to unwind and have a good time.",
-          responses: {
-            "Has there been an increase in new customers?": {
-              question: "A slight increase, but nothing too significant.",
-            },
-            "Have any regular customers stopped coming?": {
-              question: "No, most of our regulars are still coming in as usual.",
-            },
-            "Have there been any complaints from customers?": {
-              question: "No, we haven't received any notable complaints.",
-            },
-          },
-        },
-
-        "Did anyone approach Don Moretti that seemed unusual?": {
-          question: "A few people greeted him, but no one stood out as unusual.",
-          responses: {
-            "Can you describe these people?": {
-              question: "Mostly regulars. A mix of business associates and friends.",
-            },
-            "Was there any tension in Don's interactions?": {
-              question: "He seemed a bit on edge, but that's not unusual for him.",
-            },
-            "Did anyone leave right after speaking with Don?": {
-              question: "No, they all stayed around for a while.",
-            },
-          },
-        },
-
-
-        
-      },
-    },
-
   },
 };
 
-export default bartenderInterrogation;
+export default data;

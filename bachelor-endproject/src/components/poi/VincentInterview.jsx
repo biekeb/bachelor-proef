@@ -12,24 +12,93 @@ import {
 import { BlendFunction } from "postprocessing";
 import questionmark from "../../styling/images/Questionmark.png";
 
+const specialQuestionNode = {
+  question: "",
+  responses: {
+    "Were you having an affair with Isabella?": {
+      question: "Yes, Isabella and I were seeing each other in secret.",
+      responses: {
+        "How long has the affair been going on?": {
+          question: "We've been seeing each other for about a year.",
+          responses: {
+            "How did the affair start?": {
+              question:
+                "We grew close when she confided in me about Don's abuse.",
+            },
+            "Were you in love with Isabella?": {
+              question: "Yes, we developed strong feelings for each other.",
+            },
+          },
+        },
+        "Why did you keep the affair a secret?": {
+          question: "We were afraid of what Don might do if he found out.",
+          responses: {
+            "Did you plan to leave Don for Isabella?": {
+              question:
+                "We talked about it, but she was too scared to take that step.",
+            },
+            "Did you ever pressure Isabella to leave Don?": {
+              question: "No, I understood her situation and was patient.",
+            },
+          },
+        },
+        "Did Don know about the affair?": {
+          question:
+            "I think he suspected something, but I don't know for sure.",
+          responses: {
+            "Did Don ever confront you about it?": {
+              question:
+                "He made some comments, but he never directly confronted me.",
+            },
+            "How did Don's behavior change after he suspected the affair?": {
+              question: "He became even more controlling and abusive.",
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
 export default function SceneVincentInterview() {
   const [currentNode, setCurrentNode] = useState(data);
   const [detectiveMeter, setDetectiveMeter] = useState(40);
+  const [specialQuestionAsked, setSpecialQuestionAsked] = useState(false);
+  const [interrogationCompleted, setInterrogationCompleted] = useState(false);
 
   const handleResponse = (response) => {
     const nextNode = currentNode.responses[response];
     if (nextNode) {
       // Calculate impact on detective meter
       const impactLevel = nextNode.impactLevel || 1; // Default impact level
-      setDetectiveMeter(detectiveMeter + impactLevel);
+      const newDetectiveMeter = detectiveMeter + impactLevel;
+      setDetectiveMeter(newDetectiveMeter);
 
-      setCurrentNode(nextNode);
+      if (newDetectiveMeter > 70 && !specialQuestionAsked) {
+        setSpecialQuestionAsked(true);
+        setCurrentNode(specialQuestionNode);
+      } else {
+        setCurrentNode(nextNode);
+      }
     } else {
+      localStorage.setItem("interrogationDone", "true");
+      setInterrogationCompleted(true);
       alert("End of interrogation. Thank you for playing!");
       // You can handle end of interrogation logic here
     }
   };
 
+  if (interrogationCompleted) {
+    return (
+      <div className="interview-div">
+        <button className="end-btn">
+          <a href="/app">Back to bar</a>
+        </button>
+        <h1>Interrogation Isabella</h1>
+        <p>You have already completed this interrogation session.</p>
+      </div>
+    );
+  }
   return (
     <div className="interview-div">
       <button className="end-btn">
@@ -98,7 +167,7 @@ function QuestionNode({ node, onResponse }) {
         </ul>
       </div>
       <div className="node-awnser">
-        <h2>Vincent awnser:</h2>
+        <h2 id="h2-kk">Vincent awnser:</h2>
         <p>{node.question}</p>
       </div>
     </div>
