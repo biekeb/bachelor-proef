@@ -4,7 +4,6 @@ import letter from "../../styling/images/letter.png";
 
 
 const ClueManager = {
-    // Define initial clues
     clues: {
       clue1: {
         found: false,
@@ -29,7 +28,6 @@ const ClueManager = {
             imageUrl: letter,
         },      
   
-      // Add more clues as needed
     },
     // Function to update a clue's status
     updateClueStatus(clueName) {

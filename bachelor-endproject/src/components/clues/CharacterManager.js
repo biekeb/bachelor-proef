@@ -2,7 +2,6 @@ import vincentimg from '../../styling/images/mug.png';
 import isabellaimg from '../../styling/images/muganthony.png';
 
 const CharacterManager = {
-    // Define initial characters
     characters: {
       isabella: {
         found: false,
@@ -16,7 +15,6 @@ const CharacterManager = {
         found: false,
         image: vincentimg,
       },
-      // Add more characters as needed
     },
   
     // Function to update a character's status
