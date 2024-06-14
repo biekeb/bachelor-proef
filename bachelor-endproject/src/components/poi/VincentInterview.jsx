@@ -70,7 +70,9 @@ export default function SceneVincentInterview() {
         </Canvas>
         <div>
           <div className="detective-meter">
-            {/* Detective Meter: {detectiveMeter} % */}
+            <div className="detective-meter-p">
+              <p id="character-font"> Detective Meter: {detectiveMeter} %</p>
+            </div>
           </div>
         </div>
       </div>

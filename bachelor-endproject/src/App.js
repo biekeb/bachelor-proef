@@ -158,15 +158,7 @@ export default function App() {
             >
               <div style={{ pointerEvents: "auto", background: "white", padding: "20px", borderRadius: "10px" }}>
               <button style={{
-                position: "absolute",
-                top: "10px",
-                right: "10px",
-                background: "red",
-                color: "white",
-                padding: "5px",
-                borderRadius: "5px",
-              
-              }} onClick={() => setShowLetter(false)}>Close</button>
+              }} className="letter-btn" onClick={() => setShowLetter(false)}>Close</button>
 
                <img src={leter} alt="letter" style={{ height: "100vh" }} />
               </div>

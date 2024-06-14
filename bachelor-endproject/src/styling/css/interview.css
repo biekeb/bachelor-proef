@@ -77,6 +77,20 @@
 }
 
 .node-awnser{
-  border: red 1pt solid;
+  border: rgb(255, 255, 255) 1pt solid;
   
+}
+
+.detective-meter-p {
+  position: relative;
+  padding-top: 90%;
+  padding-left: 15%;
+
+
+}
+
+.detective-meter-p p {
+  border: rgb(33, 33, 33) 1pt solid;
+
+
 }

@@ -319,3 +319,29 @@ body {
   background-color: #0056b3;
 }
 
+.letter-btn{
+  background-color: #461919;
+  color: white;
+  border: #e5dccd 1pt solid;
+  cursor: pointer;
+  box-shadow: inset 0 -5px 10px  #0c0c0c;
+  box-shadow: inset 0 5px 10px  #0c0c0c;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  padding: 5px;
+  border-radius: 5px;
+
+}
+
+/* style={{
+  position: "absolute",
+  top: "10px",
+  right: "10px",
+  background: "red",
+  color: "white",
+  padding: "5px",
+  borderRadius: "5px",
+
+}} */
