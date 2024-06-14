@@ -35,7 +35,7 @@ export default function SceneIsabellaInterview() {
       <button className="end-btn">
         <a href="/app">Back to bar</a>
       </button>
-      <h1>Intorigation Vincent</h1>
+      <h1>Intorigation Isabella</h1>
       <p>
         Ask Vincent the bar owner questions to get information about the
         murderer
@@ -70,7 +70,7 @@ export default function SceneIsabellaInterview() {
         </Canvas>
         <div>
           <div className="detective-meter-isa">
-            Detective Meter: {detectiveMeter} %
+            {/* Detective Meter: {detectiveMeter} % */}
           </div>
         </div>
       </div>
@@ -96,7 +96,7 @@ function QuestionNode({ node, onResponse }) {
         </ul>
       </div>
       <div className="node-awnser">
-        <h2>Vincent awnser:</h2>
+        <h2>Isabella awnser:</h2>
         <p>{node.question}</p>
       </div>
     </div>

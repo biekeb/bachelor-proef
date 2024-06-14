@@ -20,7 +20,7 @@ export function VincentInBar() {
 
   const handleTap = () => {
     navigate("/vincent");
-    CharacterManager.updateCharacterStatus("vincent"); // Update character status
+    CharacterManager.updateCharacterStatus("vincent");
   };
 
   return (

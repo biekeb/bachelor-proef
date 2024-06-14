@@ -2,14 +2,10 @@
 @font-face {
   font-family: "noir";
 
-  src: url("../fonts/FilmNoir.otf") format("otf");
+  src: url("../fonts/FilmNoir.ttf") format("ttf");
 }
 
-@font-face {
-  font-family: "cookie";
 
-  src: url("../fonts/Cookie-Regular.ttf") format("ttf");
-}
 
 @font-face {
   font-family: "liberation";
@@ -17,13 +13,53 @@
   src: url("../fonts/LiberationSerif-Regular.ttf") format("ttf");
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+
 body {
   margin: 0;
+  font-family: sans-serif;
+}
+
+#character-font{
+  font-family: 'Delius', sans-serif;
+  color: black;
+
+}
+
+li {
+font-family: sans-serif;}
+
+ul{
+  font-family: sans-serif;
+
 }
 
 h1 {
   color: white;
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+
+h2 {
+  color: white;
   font-family: noir;
+} 
+
+h3 {
+  color: white;
+  font-family: sans-serif;
+}
+
+h4 {
+  color: white;
+  font-family: sans-serif;
+}
+
+p{
+  color: white;
+  font-family: sans-serif;
+
 }
 
 :root {

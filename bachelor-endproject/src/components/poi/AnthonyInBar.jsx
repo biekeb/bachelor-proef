@@ -1,6 +1,7 @@
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import CharacterManager from "../clues/CharacterManager";
 
 export default function AnthonyInBar() {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ export default function AnthonyInBar() {
 
   const handleTap = () => {
     navigate("/anthony");
+    CharacterManager.updateCharacterStatus("anthony"); // Update character status
   };
 
   return (

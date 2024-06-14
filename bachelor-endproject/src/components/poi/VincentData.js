@@ -1,5 +1,5 @@
 const bartenderInterrogation = {
-  question: "?",
+  question: "",
   responses: {
 
     "Do you recall seeing anyone leaving the bar around the time of the murder?": {

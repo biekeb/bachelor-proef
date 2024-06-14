@@ -1,21 +1,19 @@
 import vincentimg from '../../styling/images/mug.png';
+import isabellaimg from '../../styling/images/muganthony.png';
 
 const CharacterManager = {
     // Define initial characters
     characters: {
-      isabel: {
+      isabella: {
         found: false,
-        description: "Isabel's description.",
-        image: vincentimg,
+        image: isabellaimg,
       },
       vincent: {
         found: false,
-        description: "Vincent's description.",
         image: vincentimg,
       },
-      anthon: {
+      anthony: {
         found: false,
-        description: "Anthon's description.",
         image: vincentimg,
       },
       // Add more characters as needed
@@ -25,30 +23,31 @@ const CharacterManager = {
     updateCharacterStatus(characterName) {
       if (this.characters[characterName]) {
         this.characters[characterName].found = true;
-        // Save updated characters to local storage
+        // Save updated characters to session storage
         this.saveCharacters();
       } else {
         console.error(`Character '${characterName}' does not exist.`);
       }
     },
   
-    // Function to retrieve characters from local storage
+    // Function to retrieve characters from session storage
     retrieveCharacters() {
       const storedCharacters = sessionStorage.getItem("characters");
       if (storedCharacters) {
         this.characters = JSON.parse(storedCharacters);
+      } else {
+        this.saveCharacters(); // Save the initial characters if not already present
       }
       return this.characters;
     },
   
-    // Function to save characters to local storage
+    // Function to save characters to session storage
     saveCharacters() {
       sessionStorage.setItem("characters", JSON.stringify(this.characters));
     },
   };
   
-  // Initialize the characters from local storage
+  // Initialize the characters from session storage
   CharacterManager.retrieveCharacters();
   
   export default CharacterManager;
-  

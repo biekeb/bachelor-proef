@@ -88,6 +88,18 @@
   }
 
   
+.confirm-btn{
+    background-color: #2b2119;
+    color: white;
+    padding: 16px 20px;
+    border: #e5dccd 1pt solid;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 20px;
+    margin: 10px;
+    box-shadow: inset 0 -5px 10px  #0c0c0c;
+    box-shadow: inset 0 5px 10px  #0c0c0c;
+  }
 
 
   @media screen and (min-width: 1000px) {

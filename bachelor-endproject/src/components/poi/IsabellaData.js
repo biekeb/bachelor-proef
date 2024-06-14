@@ -1,5 +1,5 @@
 const data = {
-  question: "You're investigating a murder case involving Isabella Moretti. What's your first question for her?",
+  question: "",
   responses: {
     "Where were you at the time of the murder?": {
       question: "I was here with my husband for a meeting with a woman.",
