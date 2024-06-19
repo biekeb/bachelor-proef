@@ -13,6 +13,7 @@ export default function Anthony() {
   anthony.scene.position.set(0, -6, 0);
   anthony.scene.rotation.set(0, 0, 0);
   anthony.scene.scale.set(5, 5, 5);
+  anthony.scene.frustumCulled = false; // Disable automatic frustum culling
 
   return <primitive object={anthony.scene} />;
 }

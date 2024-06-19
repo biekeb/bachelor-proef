@@ -13,6 +13,7 @@ export default function Vincent() {
   vincent.scene.position.set(0, -6, 0);
   vincent.scene.rotation.set(0, 0, 0);
   vincent.scene.scale.set(5, 5, 5);
+  vincent.scene.frustumCulled = false; // Disable automatic frustum culling
 
   return <primitive object={vincent.scene} />;
 }

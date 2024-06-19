@@ -25,9 +25,9 @@ function Deadon() {
     // Ensure all materials are correctly set
     scene.traverse((object) => {
       if (object.isMesh) {
-        object.frustumCulled = false; // Prevent disappearing due to frustum culling
-        object.castShadow = true; // Ensure it can cast shadows
-        object.receiveShadow = true; // Ensure it can receive shadows
+        object.frustumCulled = false;
+        object.castShadow = true; 
+        object.receiveShadow = true; 
 
         if (object.material) {
           object.material.depthWrite = true;

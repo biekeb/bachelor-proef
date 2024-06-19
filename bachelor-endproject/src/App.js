@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PointerLockControls, useGLTF, useAnimations } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
@@ -33,10 +33,12 @@ import ClueManager from "./components/clues/clueManager";
 
 export default function App() {
   const [loader, setLoader] = useState(true);
-  const [showInventory, setShowInventory] = useState(false); // State to manage inventory visibility
-  const [ShowTutorialScreen, setShowTutorialScreen] = useState(true); // State to manage tutorial screen visibility
+  const [showInventory, setShowInventory] = useState(false);
+  const [showTutorialScreen, setShowTutorialScreen] = useState(true);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
-  const [showLetter, setShowLetter] = useState(false); // State to manage letter visibility
+  const [showLetter, setShowLetter] = useState(false);
+
+  const audioRef = useRef(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -46,11 +48,10 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    // Check localStorage for music state
     const musicState = sessionStorage.getItem("isMusicPlaying");
     if (musicState === "true") {
       playMusic();
-      setShowTutorialScreen(false); // If the music was playing, assume tutorial was closed
+      setShowTutorialScreen(false);
     }
   }, []);
 
@@ -68,23 +69,27 @@ export default function App() {
   }, []);
 
   const playMusic = () => {
-    const audio = new Audio(music);
-    audio.loop = true;
-    audio.play();
+    if (!audioRef.current) {
+      audioRef.current = new Audio(music);
+      audioRef.current.loop = true;
+    }
+    audioRef.current.play();
     setIsMusicPlaying(true);
-    sessionStorage.setItem("isMusicPlaying", "true"); // Save music state to localStorage
+    sessionStorage.setItem("isMusicPlaying", "true");
   };
 
   const stopMusic = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
     setIsMusicPlaying(false);
-    sessionStorage.setItem("isMusicPlaying", "false"); // Save music state to localStorage
+    sessionStorage.setItem("isMusicPlaying", "false");
   };
 
   const handleLetterClick = () => {
     setShowLetter(true);
-    ClueManager.updateClueStatus("clue4"); // Update clue4 status to true
+    ClueManager.updateClueStatus("clue4");
   };
-
 
   return (
     <>
@@ -92,7 +97,7 @@ export default function App() {
         <Loader />
       ) : (
         <div style={{ position: "relative" }}>
-          {ShowTutorialScreen && (
+          {showTutorialScreen && (
             <div className="tutorialscreen-div">
               <TutorialSreen 
                 onClose={() => setShowTutorialScreen(false)} 
@@ -119,19 +124,16 @@ export default function App() {
               left: 0,
               zIndex: '-1',
             }}
+            onCreated={({ gl, scene }) => {
+              gl.physicallyCorrectLights = true; // Enable physically correct lighting
+              scene.frustumCulled = true; // Enable frustum culling
+            }}
           >
             <EffectComposer>
-              <DepthOfField
-                focusDistance={0}
-                focalLength={0.02}
-                bokehScale={2}
-                height={480}
-              />
-              <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
+              <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={1.5} height={480} />
+              <Bloom luminanceThreshold={0.1} luminanceSmoothing={0.9} height={300} />
               <Noise opacity={0.02} />
-              <ColorAverage
-                blendFunction={BlendFunction.NORMAL} // blend mode
-              />
+              <ColorAverage blendFunction={BlendFunction.NORMAL} />
             </EffectComposer>
 
             <DeadonScene />
@@ -145,9 +147,8 @@ export default function App() {
               <VincentInBar />
               <AnthonyInBar />
               <IsabellaInBar />
-              <Phonebooth  />
-              <TrashcanTrigger />
-              <Letter onClick={handleLetterClick} /> {/* Use handler here */}
+              <Phonebooth />
+              <Letter onClick={handleLetterClick} />
             </Physics>
             <PointerLockControls />
           </Canvas>
@@ -160,18 +161,15 @@ export default function App() {
                 left: '30%',
                 height: "100%",
                 pointerEvents: "none",
-
               }}
             >
               <div style={{ pointerEvents: "auto", background: "white", padding: "20px", borderRadius: "10px" }}>
-              <button style={{
-              }} className="letter-btn" onClick={() => setShowLetter(false)}>Close</button>
-
-               <img src={leter} alt="letter" style={{ height: "100vh" }} />
+                <button className="letter-btn" onClick={() => setShowLetter(false)}>Close</button>
+                <img src={leter} alt="letter" style={{ height: "100vh" }} />
               </div>
             </div>
           )}
-         
+
           {showInventory && (
             <div
               style={{
