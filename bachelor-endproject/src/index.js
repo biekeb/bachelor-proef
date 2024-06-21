@@ -20,6 +20,7 @@ import SceneVincentInterview from "./components/poi/VincentInterview.jsx";
 import EndScene from "./pages/EndScene.jsx";
 import SceneIsabellaInterview from "./components/poi/IsabellaInterview.jsx";
 import SceneAnthonyInterview from "./components/poi/AnthonyInterview.jsx";
+import VideoPage from "./pages/VideoPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
   {
     path: "/end",
     element: <EndScene/>,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/video",
+    element: <VideoPage/>,
     errorElement: <ErrorPage />,
   },
   
